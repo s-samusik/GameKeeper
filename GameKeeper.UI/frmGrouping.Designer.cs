@@ -31,7 +31,7 @@
             this.tlpMainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnNewGrouping = new System.Windows.Forms.Button();
+            this.btnAddGrouping = new System.Windows.Forms.Button();
             this.btnDelGrouping = new System.Windows.Forms.Button();
             this.tbxNewGrouping = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpButtons.Controls.Add(this.btnBack, 1, 7);
-            this.tlpButtons.Controls.Add(this.btnNewGrouping, 1, 2);
+            this.tlpButtons.Controls.Add(this.btnAddGrouping, 1, 2);
             this.tlpButtons.Controls.Add(this.btnDelGrouping, 1, 3);
             this.tlpButtons.Controls.Add(this.tbxNewGrouping, 1, 1);
             this.tlpButtons.Controls.Add(this.label2, 1, 0);
@@ -95,22 +95,23 @@
             this.btnBack.Location = new System.Drawing.Point(36, 444);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(262, 57);
-            this.btnBack.TabIndex = 0;
+            this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back to main window";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btReturn_Click);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnNewGrouping
+            // btnAddGrouping
             // 
-            this.btnNewGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNewGrouping.FlatAppearance.BorderSize = 0;
-            this.btnNewGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewGrouping.Location = new System.Drawing.Point(36, 129);
-            this.btnNewGrouping.Name = "btnNewGrouping";
-            this.btnNewGrouping.Size = new System.Drawing.Size(262, 57);
-            this.btnNewGrouping.TabIndex = 1;
-            this.btnNewGrouping.Text = "Add new grouping";
-            this.btnNewGrouping.UseVisualStyleBackColor = true;
+            this.btnAddGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddGrouping.FlatAppearance.BorderSize = 0;
+            this.btnAddGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddGrouping.Location = new System.Drawing.Point(36, 129);
+            this.btnAddGrouping.Name = "btnAddGrouping";
+            this.btnAddGrouping.Size = new System.Drawing.Size(262, 57);
+            this.btnAddGrouping.TabIndex = 1;
+            this.btnAddGrouping.Text = "Add new grouping";
+            this.btnAddGrouping.UseVisualStyleBackColor = true;
+            this.btnAddGrouping.Click += new System.EventHandler(this.btnAddGrouping_Click);
             // 
             // btnDelGrouping
             // 
@@ -132,8 +133,9 @@
             this.tbxNewGrouping.MaxLength = 30;
             this.tbxNewGrouping.Name = "tbxNewGrouping";
             this.tbxNewGrouping.Size = new System.Drawing.Size(262, 29);
-            this.tbxNewGrouping.TabIndex = 3;
+            this.tbxNewGrouping.TabIndex = 0;
             this.tbxNewGrouping.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxNewGrouping.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxNewGrouping_KeyDown);
             // 
             // label2
             // 
@@ -153,9 +155,10 @@
             this.btnDelAllGroupings.Location = new System.Drawing.Point(36, 255);
             this.btnDelAllGroupings.Name = "btnDelAllGroupings";
             this.btnDelAllGroupings.Size = new System.Drawing.Size(262, 57);
-            this.btnDelAllGroupings.TabIndex = 5;
+            this.btnDelAllGroupings.TabIndex = 3;
             this.btnDelAllGroupings.Text = "Delete all groupings";
             this.btnDelAllGroupings.UseVisualStyleBackColor = true;
+            this.btnDelAllGroupings.Click += new System.EventHandler(this.btnDelAllGroupings_Click);
             // 
             // tlpViewList
             // 
@@ -184,7 +187,7 @@
             this.lbxGroupingsList.Location = new System.Drawing.Point(36, 66);
             this.lbxGroupingsList.Name = "lbxGroupingsList";
             this.lbxGroupingsList.Size = new System.Drawing.Size(262, 435);
-            this.lbxGroupingsList.TabIndex = 0;
+            this.lbxGroupingsList.TabIndex = 5;
             // 
             // label1
             // 
@@ -227,7 +230,7 @@
         private System.Windows.Forms.ListBox lbxGroupingsList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnNewGrouping;
+        private System.Windows.Forms.Button btnAddGrouping;
         private System.Windows.Forms.Button btnDelGrouping;
         private System.Windows.Forms.TextBox tbxNewGrouping;
         private System.Windows.Forms.Label label2;

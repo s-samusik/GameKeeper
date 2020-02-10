@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Controller\BaseController.cs" />
     <Compile Include="Controller\GameController.cs" />
+    <Compile Include="Controller\GroupingController.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Grouping.cs" />
     <Compile Include="Model\Player.cs" />
