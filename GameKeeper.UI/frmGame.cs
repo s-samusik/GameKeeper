@@ -85,9 +85,9 @@ namespace GameKeeper.UI
         #region buttons - Current game
         private void btnGroupings_Click(object sender, EventArgs e)
         {
-            //Hide();
-            //frmGrouping grForm = new frmGrouping();
-            //grForm.ShowDialog();
+            Hide();
+            frmGrouping grForm = new frmGrouping();
+            grForm.ShowDialog();
         }
 
         private void btnGetStatisic_Click(object sender, EventArgs e)
