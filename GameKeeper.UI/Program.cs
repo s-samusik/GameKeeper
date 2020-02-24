@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GameKeeper.UI
@@ -16,7 +13,7 @@ namespace GameKeeper.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmGame());
+            Application.Run(new frmPlayer());
         }
     }
 }
