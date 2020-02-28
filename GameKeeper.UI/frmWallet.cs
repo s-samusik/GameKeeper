@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace GameKeeper.UI
 {
-    public partial class frmPlayer : Form
+    public partial class frmWallet : Form
     {
-        public frmPlayer()
+        public frmWallet()
         {
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCloseWallet_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void btnWallet_Click(object sender, EventArgs e)
-        {
-            frmWallet frmWallet = new frmWallet();
-            frmWallet.ShowDialog();
         }
     }
 }
