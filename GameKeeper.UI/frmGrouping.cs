@@ -45,7 +45,21 @@ namespace GameKeeper.UI
             tbxNewGrouping.Text = string.Empty;
             tbxNewGrouping.Focus();
         }
-    
+
+        private void btnDelGrouping_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbxGroupingsList.SelectedIndex;
+
+            if (selectedIndex != -1)
+            {
+                groupingController.DelSelectedGrouping(selectedIndex);
+                RefreshGroupingList();
+
+                MessageBox.Show($"Grouping has been deleted.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
         private void btnDelAllGroupings_Click(object sender, EventArgs e)
         {
             groupingController.DelAllGroupings();
@@ -69,5 +83,6 @@ namespace GameKeeper.UI
                 btnAddGrouping_Click(this,null);
             }
         }
+
     }
 }

@@ -43,6 +43,16 @@ namespace GameKeeper.BL.Controller
         }
 
         /// <summary>
+        /// Delete selected grouping in current game.
+        /// </summary>
+        /// <param name="index">Index of the item to be deleted.</param>
+        public void DelSelectedGrouping(int index)
+        {
+            Groupings.RemoveAt(index);
+            SaveAllGroupings();
+        }
+
+        /// <summary>
         /// Delete all groupings in current game.
         /// </summary>
         public void DelAllGroupings()
