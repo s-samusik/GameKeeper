@@ -6,13 +6,13 @@ namespace GameKeeper.UI
 {
     public partial class FrmGame : Form
     {
+        private Form frmPlayer;
         GameController gameController;
 
         #region Constructor
         public FrmGame()
         {
             InitializeComponent();
-            tbxID.Focus();
 
             gameController = new GameController();
 
@@ -82,12 +82,12 @@ namespace GameKeeper.UI
         }
         #endregion
 
-        #region buttons - Current game
+        #region Buttons - Current game
         private void btnGroupings_Click(object sender, EventArgs e)
         {
             Hide();
-            frmGrouping grForm = new frmGrouping();
-            grForm.ShowDialog();
+            FrmGrouping frmGrouping = new FrmGrouping();
+            frmGrouping.ShowDialog();
         }
 
         private void btnGetStatisic_Click(object sender, EventArgs e)
@@ -108,9 +108,24 @@ namespace GameKeeper.UI
 
         private void btnCloseKeeper_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Current game will be saved.\nSee you later.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Application.Exit();
+            var result = MessageBox.Show("Current game will be saved.\nSee you later.", "Game keeper", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            
+            if(result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
+
         #endregion
+
+        private void tbxID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Hide();
+                frmPlayer = new FrmPlayer(tbxID.Text);
+                frmPlayer.ShowDialog();
+            }
+        }
     }
 }

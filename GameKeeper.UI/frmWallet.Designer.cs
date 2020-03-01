@@ -1,6 +1,6 @@
 ﻿namespace GameKeeper.UI
 {
-    partial class frmWallet
+    partial class FrmWallet
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.tplWallet = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCloseWallet = new System.Windows.Forms.Button();
+            this.btnRemoveCash = new System.Windows.Forms.Button();
             this.tbxWallet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxAddCash = new System.Windows.Forms.TextBox();
             this.btnAddCash = new System.Windows.Forms.Button();
-            this.btnRemoveCash = new System.Windows.Forms.Button();
-            this.btnCloseWallet = new System.Windows.Forms.Button();
             this.tplWallet.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,32 @@
             this.tplWallet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tplWallet.Size = new System.Drawing.Size(484, 361);
             this.tplWallet.TabIndex = 0;
+            // 
+            // btnCloseWallet
+            // 
+            this.btnCloseWallet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCloseWallet.FlatAppearance.BorderSize = 0;
+            this.btnCloseWallet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseWallet.Location = new System.Drawing.Point(83, 303);
+            this.btnCloseWallet.Name = "btnCloseWallet";
+            this.btnCloseWallet.Size = new System.Drawing.Size(316, 55);
+            this.btnCloseWallet.TabIndex = 5;
+            this.btnCloseWallet.Text = "Close wallet";
+            this.btnCloseWallet.UseVisualStyleBackColor = true;
+            this.btnCloseWallet.Click += new System.EventHandler(this.btnCloseWallet_Click);
+            // 
+            // btnRemoveCash
+            // 
+            this.btnRemoveCash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRemoveCash.FlatAppearance.BorderSize = 0;
+            this.btnRemoveCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveCash.Location = new System.Drawing.Point(83, 243);
+            this.btnRemoveCash.Name = "btnRemoveCash";
+            this.btnRemoveCash.Size = new System.Drawing.Size(316, 54);
+            this.btnRemoveCash.TabIndex = 4;
+            this.btnRemoveCash.Text = "Remove from wallet";
+            this.btnRemoveCash.UseVisualStyleBackColor = true;
+            this.btnRemoveCash.Click += new System.EventHandler(this.btnRemoveCash_Click);
             // 
             // tbxWallet
             // 
@@ -110,35 +136,11 @@
             this.btnAddCash.Name = "btnAddCash";
             this.btnAddCash.Size = new System.Drawing.Size(316, 54);
             this.btnAddCash.TabIndex = 3;
-            this.btnAddCash.Text = "Add to wallet";
+            this.btnAddCash.Text = "Put in wallet";
             this.btnAddCash.UseVisualStyleBackColor = true;
+            this.btnAddCash.Click += new System.EventHandler(this.btnAddCash_Click);
             // 
-            // btnRemoveCash
-            // 
-            this.btnRemoveCash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveCash.FlatAppearance.BorderSize = 0;
-            this.btnRemoveCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveCash.Location = new System.Drawing.Point(83, 243);
-            this.btnRemoveCash.Name = "btnRemoveCash";
-            this.btnRemoveCash.Size = new System.Drawing.Size(316, 54);
-            this.btnRemoveCash.TabIndex = 4;
-            this.btnRemoveCash.Text = "Remove from wallet";
-            this.btnRemoveCash.UseVisualStyleBackColor = true;
-            // 
-            // btnCloseWallet
-            // 
-            this.btnCloseWallet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCloseWallet.FlatAppearance.BorderSize = 0;
-            this.btnCloseWallet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseWallet.Location = new System.Drawing.Point(83, 303);
-            this.btnCloseWallet.Name = "btnCloseWallet";
-            this.btnCloseWallet.Size = new System.Drawing.Size(316, 55);
-            this.btnCloseWallet.TabIndex = 5;
-            this.btnCloseWallet.Text = "Close wallet";
-            this.btnCloseWallet.UseVisualStyleBackColor = true;
-            this.btnCloseWallet.Click += new System.EventHandler(this.btnCloseWallet_Click);
-            // 
-            // frmWallet
+            // FrmWallet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,7 +152,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmWallet";
+            this.Name = "FrmWallet";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game Keeper: Wallet";

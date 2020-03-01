@@ -245,6 +245,7 @@
             this.tbxID.Size = new System.Drawing.Size(311, 29);
             this.tbxID.TabIndex = 1;
             this.tbxID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxID_KeyDown);
             // 
             // btnCompleteGame
             // 

@@ -1,6 +1,6 @@
 ﻿namespace GameKeeper.UI
 {
-    partial class frmGrouping
+    partial class FrmGrouping
     {
         /// <summary>
         /// Required designer variable.

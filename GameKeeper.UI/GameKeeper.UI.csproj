@@ -46,43 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmGame.cs">
+    <Compile Include="FrmGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGame.Designer.cs">
-      <DependentUpon>frmGame.cs</DependentUpon>
+    <Compile Include="FrmGame.Designer.cs">
+      <DependentUpon>FrmGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGrouping.cs">
+    <Compile Include="FrmGrouping.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGrouping.Designer.cs">
-      <DependentUpon>frmGrouping.cs</DependentUpon>
+    <Compile Include="FrmGrouping.Designer.cs">
+      <DependentUpon>FrmGrouping.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPlayer.cs">
+    <Compile Include="FrmPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPlayer.Designer.cs">
-      <DependentUpon>frmPlayer.cs</DependentUpon>
+    <Compile Include="FrmPlayer.Designer.cs">
+      <DependentUpon>FrmPlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWallet.cs">
+    <Compile Include="FrmWallet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmWallet.Designer.cs">
-      <DependentUpon>frmWallet.cs</DependentUpon>
+    <Compile Include="FrmWallet.Designer.cs">
+      <DependentUpon>FrmWallet.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmGame.resx">
-      <DependentUpon>frmGame.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGame.resx">
+      <DependentUpon>FrmGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGrouping.resx">
-      <DependentUpon>frmGrouping.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGrouping.resx">
+      <DependentUpon>FrmGrouping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPlayer.resx">
-      <DependentUpon>frmPlayer.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPlayer.resx">
+      <DependentUpon>FrmPlayer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmWallet.resx">
-      <DependentUpon>frmWallet.cs</DependentUpon>
+    <EmbeddedResource Include="FrmWallet.resx">
+      <DependentUpon>FrmWallet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GameKeeper.BL.Model
 {
@@ -43,14 +44,9 @@ namespace GameKeeper.BL.Model
         public int CountOfDeaths { get; set; }
 
         /// <summary>
-        /// Player's count of completed quests.
+        /// List player's quests.
         /// </summary>
-        public int CountOfCompletedQuests { get; set; }
-
-        /// <summary>
-        /// Player's count of uncompleted quests.
-        /// </summary>
-        public int CountOfUncompletedQuests { get; set; }
+        public List<Quest> Quests { get; set; }
 
         /// <summary>
         /// Player's state of life.
@@ -105,8 +101,6 @@ namespace GameKeeper.BL.Model
             Cash = cash;
             GameStart = DateTime.Now;
             CountOfDeaths = 0;
-            CountOfCompletedQuests = 0;
-            CountOfUncompletedQuests = 0;
             IsDead = false;
         }
     }

@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace GameKeeper.UI
 {
-    public partial class frmGrouping : Form
+    public partial class FrmGrouping : Form
     {
         private Form prevForm;
         GroupingController groupingController;
 
-        public frmGrouping()
+        public FrmGrouping()
         {
             InitializeComponent();
             

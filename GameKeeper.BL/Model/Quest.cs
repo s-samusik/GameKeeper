@@ -30,6 +30,8 @@ namespace GameKeeper.BL.Model
         /// Punishment from uncompleted quest.
         /// </summary>
         public double Punishment { get; set; }
+
+        public bool IsCompleted { get; set; } = false;
         #endregion
 
         /// <summary>
@@ -40,7 +42,7 @@ namespace GameKeeper.BL.Model
         /// <param name="lifeTime">Life time of quest.</param>
         /// <param name="reward">Reward from completed quest.</param>
         /// <param name="punishment">Punishment from uncompleted quest.</param>
-        public Quest(string name, string description, DateTime lifeTime, double reward = 0, double punishment = 0)
+        public Quest(string name, DateTime lifeTime, string description = "", double reward = 0, double punishment = 0)
         {
             #region Verification of conditions
             if (string.IsNullOrWhiteSpace(name))
