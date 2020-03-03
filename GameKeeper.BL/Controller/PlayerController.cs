@@ -46,7 +46,6 @@ namespace GameKeeper.BL.Controller
                 CurrentPlayer = new Player(playerId);
                 Players.Add(CurrentPlayer);
                 IsCurrentPlayerNew = true;
-                SavePlayersData();
             }
         }
         #endregion
@@ -106,8 +105,7 @@ namespace GameKeeper.BL.Controller
 
             SavePlayersData();
         }
-
-
+        
         /// <summary>
         /// Create pincode for new player.
         /// </summary>
@@ -118,6 +116,46 @@ namespace GameKeeper.BL.Controller
             string result = string.Format("{0:d4}", rnd.Next(0, 9999));
             
             return result;
+        }
+
+        /// <summary>
+        /// Put cash in wallet.
+        /// </summary>
+        /// <param name="cash">Cash amount.</param>
+        public void PutInWallet(double cash)
+        {
+            #region Verification of conditions
+            if (cash < 0)
+            {
+                throw new ArgumentException("Сумма не может быть меньше нуля.", nameof(cash));
+            }
+            #endregion
+
+            CurrentPlayer.Cash += cash;
+            SavePlayersData();
+        }
+
+        /// <summary>
+        /// Withdraw cash from wallet.
+        /// </summary>
+        /// <param name="cash">Cash amount.</param>
+        /// <returns>The withdraw was successful.</returns>
+        public bool WithdrawFromWallet(double cash)
+        {
+            #region Verification of conditions
+            if (cash < 0)
+            {
+                throw new ArgumentException("Сумма не может быть меньше нуля.", nameof(cash));
+            }
+            #endregion
+
+            if(CurrentPlayer.Cash >= cash)
+            {
+                CurrentPlayer.Cash -= cash;
+                SavePlayersData();
+                return true;
+            }
+            return false;
         }
     }
 }

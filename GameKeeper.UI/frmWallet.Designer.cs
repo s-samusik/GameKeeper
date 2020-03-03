@@ -31,26 +31,30 @@
             this.tplWallet = new System.Windows.Forms.TableLayoutPanel();
             this.btnCloseWallet = new System.Windows.Forms.Button();
             this.btnRemoveCash = new System.Windows.Forms.Button();
-            this.tbxWallet = new System.Windows.Forms.TextBox();
+            this.tbxInWallet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbxAddCash = new System.Windows.Forms.TextBox();
+            this.tbxCashAmount = new System.Windows.Forms.TextBox();
             this.btnAddCash = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnTakeAllMoney = new System.Windows.Forms.Button();
             this.tplWallet.SuspendLayout();
             this.SuspendLayout();
             // 
             // tplWallet
             // 
-            this.tplWallet.ColumnCount = 3;
-            this.tplWallet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tplWallet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tplWallet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tplWallet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tplWallet.Controls.Add(this.btnCloseWallet, 1, 5);
-            this.tplWallet.Controls.Add(this.btnRemoveCash, 1, 4);
-            this.tplWallet.Controls.Add(this.tbxWallet, 1, 1);
-            this.tplWallet.Controls.Add(this.label1, 1, 0);
-            this.tplWallet.Controls.Add(this.tbxAddCash, 1, 2);
-            this.tplWallet.Controls.Add(this.btnAddCash, 1, 3);
+            this.tplWallet.ColumnCount = 4;
+            this.tplWallet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tplWallet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tplWallet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tplWallet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tplWallet.Controls.Add(this.btnCloseWallet, 2, 5);
+            this.tplWallet.Controls.Add(this.btnRemoveCash, 2, 4);
+            this.tplWallet.Controls.Add(this.tbxInWallet, 2, 1);
+            this.tplWallet.Controls.Add(this.label1, 1, 1);
+            this.tplWallet.Controls.Add(this.tbxCashAmount, 2, 2);
+            this.tplWallet.Controls.Add(this.btnAddCash, 1, 4);
+            this.tplWallet.Controls.Add(this.label2, 1, 2);
+            this.tplWallet.Controls.Add(this.btnTakeAllMoney, 1, 5);
             this.tplWallet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tplWallet.Location = new System.Drawing.Point(0, 0);
             this.tplWallet.Name = "tplWallet";
@@ -61,7 +65,6 @@
             this.tplWallet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tplWallet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tplWallet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tplWallet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tplWallet.Size = new System.Drawing.Size(484, 361);
             this.tplWallet.TabIndex = 0;
             // 
@@ -70,9 +73,9 @@
             this.btnCloseWallet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCloseWallet.FlatAppearance.BorderSize = 0;
             this.btnCloseWallet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseWallet.Location = new System.Drawing.Point(83, 303);
+            this.btnCloseWallet.Location = new System.Drawing.Point(244, 303);
             this.btnCloseWallet.Name = "btnCloseWallet";
-            this.btnCloseWallet.Size = new System.Drawing.Size(316, 55);
+            this.btnCloseWallet.Size = new System.Drawing.Size(187, 55);
             this.btnCloseWallet.TabIndex = 5;
             this.btnCloseWallet.Text = "Close wallet";
             this.btnCloseWallet.UseVisualStyleBackColor = true;
@@ -83,62 +86,87 @@
             this.btnRemoveCash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRemoveCash.FlatAppearance.BorderSize = 0;
             this.btnRemoveCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveCash.Location = new System.Drawing.Point(83, 243);
+            this.btnRemoveCash.Location = new System.Drawing.Point(244, 243);
             this.btnRemoveCash.Name = "btnRemoveCash";
-            this.btnRemoveCash.Size = new System.Drawing.Size(316, 54);
+            this.btnRemoveCash.Size = new System.Drawing.Size(187, 54);
             this.btnRemoveCash.TabIndex = 4;
             this.btnRemoveCash.Text = "Remove from wallet";
             this.btnRemoveCash.UseVisualStyleBackColor = true;
             this.btnRemoveCash.Click += new System.EventHandler(this.btnRemoveCash_Click);
             // 
-            // tbxWallet
+            // tbxInWallet
             // 
-            this.tbxWallet.BackColor = System.Drawing.Color.Silver;
-            this.tbxWallet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxWallet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxWallet.Enabled = false;
-            this.tbxWallet.Location = new System.Drawing.Point(83, 75);
-            this.tbxWallet.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.tbxWallet.Name = "tbxWallet";
-            this.tbxWallet.Size = new System.Drawing.Size(316, 29);
-            this.tbxWallet.TabIndex = 0;
-            this.tbxWallet.Text = "0";
-            this.tbxWallet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxInWallet.BackColor = System.Drawing.Color.Silver;
+            this.tbxInWallet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxInWallet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxInWallet.Enabled = false;
+            this.tbxInWallet.Location = new System.Drawing.Point(244, 75);
+            this.tbxInWallet.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.tbxInWallet.MaxLength = 15;
+            this.tbxInWallet.Name = "tbxInWallet";
+            this.tbxInWallet.Size = new System.Drawing.Size(187, 29);
+            this.tbxInWallet.TabIndex = 0;
+            this.tbxInWallet.Text = "0";
+            this.tbxInWallet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(83, 0);
+            this.label1.Location = new System.Drawing.Point(51, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(316, 60);
+            this.label1.Size = new System.Drawing.Size(187, 60);
             this.label1.TabIndex = 1;
-            this.label1.Text = "wallet:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label1.Text = "total in wallet:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tbxAddCash
+            // tbxCashAmount
             // 
-            this.tbxAddCash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxAddCash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxAddCash.Location = new System.Drawing.Point(83, 135);
-            this.tbxAddCash.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.tbxAddCash.MaxLength = 30;
-            this.tbxAddCash.Name = "tbxAddCash";
-            this.tbxAddCash.Size = new System.Drawing.Size(316, 29);
-            this.tbxAddCash.TabIndex = 2;
-            this.tbxAddCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxCashAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxCashAmount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxCashAmount.Location = new System.Drawing.Point(244, 135);
+            this.tbxCashAmount.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.tbxCashAmount.MaxLength = 15;
+            this.tbxCashAmount.Name = "tbxCashAmount";
+            this.tbxCashAmount.Size = new System.Drawing.Size(187, 29);
+            this.tbxCashAmount.TabIndex = 2;
+            this.tbxCashAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxCashAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxCashAmount_KeyPress);
             // 
             // btnAddCash
             // 
             this.btnAddCash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddCash.FlatAppearance.BorderSize = 0;
             this.btnAddCash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCash.Location = new System.Drawing.Point(83, 183);
+            this.btnAddCash.Location = new System.Drawing.Point(51, 243);
             this.btnAddCash.Name = "btnAddCash";
-            this.btnAddCash.Size = new System.Drawing.Size(316, 54);
+            this.btnAddCash.Size = new System.Drawing.Size(187, 54);
             this.btnAddCash.TabIndex = 3;
             this.btnAddCash.Text = "Put in wallet";
             this.btnAddCash.UseVisualStyleBackColor = true;
             this.btnAddCash.Click += new System.EventHandler(this.btnAddCash_Click);
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(51, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(187, 60);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "enter cash amount:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnTakeAllMoney
+            // 
+            this.btnTakeAllMoney.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTakeAllMoney.FlatAppearance.BorderSize = 0;
+            this.btnTakeAllMoney.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnTakeAllMoney.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTakeAllMoney.Location = new System.Drawing.Point(51, 303);
+            this.btnTakeAllMoney.Name = "btnTakeAllMoney";
+            this.btnTakeAllMoney.Size = new System.Drawing.Size(187, 55);
+            this.btnTakeAllMoney.TabIndex = 7;
+            this.btnTakeAllMoney.Text = "Take all money";
+            this.btnTakeAllMoney.UseVisualStyleBackColor = true;
             // 
             // FrmWallet
             // 
@@ -166,10 +194,12 @@
 
         private System.Windows.Forms.TableLayoutPanel tplWallet;
         private System.Windows.Forms.Button btnRemoveCash;
-        private System.Windows.Forms.TextBox tbxWallet;
+        private System.Windows.Forms.TextBox tbxInWallet;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbxAddCash;
+        private System.Windows.Forms.TextBox tbxCashAmount;
         private System.Windows.Forms.Button btnAddCash;
         private System.Windows.Forms.Button btnCloseWallet;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnTakeAllMoney;
     }
 }

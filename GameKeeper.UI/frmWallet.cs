@@ -19,9 +19,9 @@ namespace GameKeeper.UI
 
         private void RefreshWindow()
         {
-            tbxWallet.Text = playerController.CurrentPlayer.Cash.ToString();
-            tbxAddCash.Text = string.Empty;
-            tbxAddCash.Focus();
+            tbxInWallet.Text = playerController.CurrentPlayer.Cash.ToString();
+            tbxCashAmount.Text = "0";
+            tbxCashAmount.Focus();
         }
 
         #region Buttons
@@ -32,26 +32,23 @@ namespace GameKeeper.UI
 
         private void btnAddCash_Click(object sender, EventArgs e)
         {
-            var cash = double.Parse(tbxAddCash.Text);
-            playerController.CurrentPlayer.Cash += cash;
-            playerController.SavePlayersData();
-
+            var cash = double.Parse(tbxCashAmount.Text);
+            playerController.PutInWallet(cash);
             RefreshWindow();
         }
 
         private void btnRemoveCash_Click(object sender, EventArgs e)
         {
-            var cash = double.Parse(tbxAddCash.Text);
-
-            if (playerController.CurrentPlayer.Cash >= cash)
-            {
-                playerController.CurrentPlayer.Cash -= cash;
-            }
-            playerController.SavePlayersData();
-
+            var cash = double.Parse(tbxCashAmount.Text);
+            playerController.WithdrawFromWallet(cash);
             RefreshWindow();
         }
-
         #endregion
+
+        private void tbxCashAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
+        }
     }
 }

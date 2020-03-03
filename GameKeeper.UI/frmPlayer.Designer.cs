@@ -41,7 +41,7 @@
             this.tbxPincode = new System.Windows.Forms.TextBox();
             this.tbxName = new System.Windows.Forms.TextBox();
             this.tbxStartCash = new System.Windows.Forms.TextBox();
-            this.cbxGrouping = new System.Windows.Forms.ComboBox();
+            this.cbxNewGrouping = new System.Windows.Forms.ComboBox();
             this.tlpCurrentPlayer = new System.Windows.Forms.TableLayoutPanel();
             this.lblNickname = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
@@ -57,6 +57,8 @@
             this.tbxPlayersState = new System.Windows.Forms.TextBox();
             this.tbxQuests = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbxCurrentGrouping = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcNewCurrent)).BeginInit();
             this.spcNewCurrent.Panel1.SuspendLayout();
             this.spcNewCurrent.Panel2.SuspendLayout();
@@ -102,7 +104,7 @@
             this.tlpNewPlayer.Controls.Add(this.tbxPincode, 2, 1);
             this.tlpNewPlayer.Controls.Add(this.tbxName, 2, 3);
             this.tlpNewPlayer.Controls.Add(this.tbxStartCash, 2, 5);
-            this.tlpNewPlayer.Controls.Add(this.cbxGrouping, 2, 4);
+            this.tlpNewPlayer.Controls.Add(this.cbxNewGrouping, 2, 4);
             this.tlpNewPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpNewPlayer.Location = new System.Drawing.Point(0, 0);
             this.tlpNewPlayer.Name = "tlpNewPlayer";
@@ -243,17 +245,19 @@
             this.tbxStartCash.Name = "tbxStartCash";
             this.tbxStartCash.Size = new System.Drawing.Size(85, 29);
             this.tbxStartCash.TabIndex = 2;
+            this.tbxStartCash.Text = "0";
+            this.tbxStartCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxStartCash_KeyPress);
             // 
-            // cbxGrouping
+            // cbxNewGrouping
             // 
-            this.cbxGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbxGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxGrouping.FormattingEnabled = true;
-            this.cbxGrouping.Location = new System.Drawing.Point(116, 267);
-            this.cbxGrouping.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.cbxGrouping.Name = "cbxGrouping";
-            this.cbxGrouping.Size = new System.Drawing.Size(85, 29);
-            this.cbxGrouping.TabIndex = 1;
+            this.cbxNewGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbxNewGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxNewGrouping.FormattingEnabled = true;
+            this.cbxNewGrouping.Location = new System.Drawing.Point(116, 267);
+            this.cbxNewGrouping.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.cbxNewGrouping.Name = "cbxNewGrouping";
+            this.cbxNewGrouping.Size = new System.Drawing.Size(85, 29);
+            this.cbxNewGrouping.TabIndex = 1;
             // 
             // tlpCurrentPlayer
             // 
@@ -262,6 +266,7 @@
             this.tlpCurrentPlayer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpCurrentPlayer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tlpCurrentPlayer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tlpCurrentPlayer.Controls.Add(this.label9, 1, 3);
             this.tlpCurrentPlayer.Controls.Add(this.lblNickname, 1, 0);
             this.tlpCurrentPlayer.Controls.Add(this.lblId, 2, 0);
             this.tlpCurrentPlayer.Controls.Add(this.btnBack, 2, 7);
@@ -272,10 +277,11 @@
             this.tlpCurrentPlayer.Controls.Add(this.btnKillPlayer, 1, 7);
             this.tlpCurrentPlayer.Controls.Add(this.label6, 1, 1);
             this.tlpCurrentPlayer.Controls.Add(this.tbxCash, 2, 1);
-            this.tlpCurrentPlayer.Controls.Add(this.label7, 1, 3);
-            this.tlpCurrentPlayer.Controls.Add(this.tbxPlayersState, 2, 3);
+            this.tlpCurrentPlayer.Controls.Add(this.label7, 1, 4);
+            this.tlpCurrentPlayer.Controls.Add(this.tbxPlayersState, 2, 4);
             this.tlpCurrentPlayer.Controls.Add(this.tbxQuests, 2, 2);
             this.tlpCurrentPlayer.Controls.Add(this.label8, 1, 2);
+            this.tlpCurrentPlayer.Controls.Add(this.cbxCurrentGrouping, 2, 3);
             this.tlpCurrentPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCurrentPlayer.Location = new System.Drawing.Point(0, 0);
             this.tlpCurrentPlayer.Name = "tlpCurrentPlayer";
@@ -466,7 +472,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 63);
             this.label6.TabIndex = 8;
-            this.label6.Text = "wallet:";
+            this.label6.Text = "total in wallet:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbxCash
@@ -477,6 +483,7 @@
             this.tbxCash.Enabled = false;
             this.tbxCash.Location = new System.Drawing.Point(230, 78);
             this.tbxCash.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.tbxCash.MaxLength = 15;
             this.tbxCash.Name = "tbxCash";
             this.tbxCash.Size = new System.Drawing.Size(176, 29);
             this.tbxCash.TabIndex = 9;
@@ -485,7 +492,7 @@
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(48, 189);
+            this.label7.Location = new System.Drawing.Point(48, 252);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(176, 63);
             this.label7.TabIndex = 10;
@@ -498,7 +505,7 @@
             this.tbxPlayersState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPlayersState.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxPlayersState.Enabled = false;
-            this.tbxPlayersState.Location = new System.Drawing.Point(230, 204);
+            this.tbxPlayersState.Location = new System.Drawing.Point(230, 267);
             this.tbxPlayersState.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.tbxPlayersState.Name = "tbxPlayersState";
             this.tbxPlayersState.Size = new System.Drawing.Size(176, 29);
@@ -513,6 +520,7 @@
             this.tbxQuests.Enabled = false;
             this.tbxQuests.Location = new System.Drawing.Point(230, 141);
             this.tbxQuests.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.tbxQuests.MaxLength = 15;
             this.tbxQuests.Name = "tbxQuests";
             this.tbxQuests.Size = new System.Drawing.Size(176, 29);
             this.tbxQuests.TabIndex = 12;
@@ -527,6 +535,28 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "actived quests:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(48, 189);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(176, 63);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "player\'s grouping:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbxCurrentGrouping
+            // 
+            this.cbxCurrentGrouping.BackColor = System.Drawing.Color.Silver;
+            this.cbxCurrentGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbxCurrentGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxCurrentGrouping.FormattingEnabled = true;
+            this.cbxCurrentGrouping.Location = new System.Drawing.Point(230, 204);
+            this.cbxCurrentGrouping.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.cbxCurrentGrouping.Name = "cbxCurrentGrouping";
+            this.cbxCurrentGrouping.Size = new System.Drawing.Size(176, 29);
+            this.cbxCurrentGrouping.TabIndex = 15;
             // 
             // FrmPlayer
             // 
@@ -572,7 +602,7 @@
         private System.Windows.Forms.TextBox tbxPincode;
         private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.TextBox tbxStartCash;
-        private System.Windows.Forms.ComboBox cbxGrouping;
+        private System.Windows.Forms.ComboBox cbxNewGrouping;
         private System.Windows.Forms.TableLayoutPanel tlpCurrentPlayer;
         private System.Windows.Forms.Label lblNickname;
         private System.Windows.Forms.Label lblId;
@@ -588,5 +618,7 @@
         private System.Windows.Forms.TextBox tbxPlayersState;
         private System.Windows.Forms.TextBox tbxQuests;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbxCurrentGrouping;
     }
 }

@@ -58,9 +58,9 @@ namespace GameKeeper.UI
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
             var name = tbxName.Text;
-            var grouping = cbxGrouping.Text;
+            var grouping = cbxNewGrouping.Text;
             var pincode = tbxPincode.Text;
-            var cash = double.Parse(tbxStartCash.Text);
+            _ = double.TryParse(tbxStartCash.Text, out double cash);
 
             playerController.SetNewPlayerData(name, grouping, pincode, cash);
             Close();
@@ -110,5 +110,11 @@ namespace GameKeeper.UI
             prevForm.Show();
         }
         #endregion
+
+        private void tbxStartCash_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
+        }
     }
 }
