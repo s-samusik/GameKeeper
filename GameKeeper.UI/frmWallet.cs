@@ -7,12 +7,12 @@ namespace GameKeeper.UI
     public partial class FrmWallet : Form
     {
         PlayerController playerController;
-
+        FrmPlayer prevForm;
         public FrmWallet(PlayerController player)
         {
             InitializeComponent();
-
             playerController = player;
+            prevForm = new FrmPlayer(playerController.CurrentPlayer.Id);
 
             RefreshWindow();
         }
@@ -28,6 +28,7 @@ namespace GameKeeper.UI
         private void btnCloseWallet_Click(object sender, EventArgs e)
         {
             Close();
+            prevForm.Show();
         }
 
         private void btnAddCash_Click(object sender, EventArgs e)
@@ -40,8 +41,16 @@ namespace GameKeeper.UI
         private void btnRemoveCash_Click(object sender, EventArgs e)
         {
             var cash = double.Parse(tbxCashAmount.Text);
-            playerController.WithdrawFromWallet(cash);
-            RefreshWindow();
+
+            if (playerController.WithdrawFromWallet(cash))
+            {
+                RefreshWindow();
+            }
+            else
+            {
+                MessageBox.Show("Cash amount is more than cash in the wallet.","Game Keeper",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+
         }
         #endregion
 

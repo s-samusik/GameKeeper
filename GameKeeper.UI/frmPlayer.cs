@@ -7,7 +7,6 @@ namespace GameKeeper.UI
     public partial class FrmPlayer : Form
     {
         private Form prevForm;
-        private Form frmWallet;
         PlayerController playerController;
 
         #region constructor
@@ -16,7 +15,6 @@ namespace GameKeeper.UI
             InitializeComponent();
 
             prevForm = new FrmGame();
-            
             playerController = new PlayerController(playerID);
 
             if (playerController.IsCurrentPlayerNew)
@@ -43,7 +41,6 @@ namespace GameKeeper.UI
         private void ViewPanelCurrentPlayer(PlayerController playerController)
         {
             spcNewCurrent.Panel1Collapsed = true;
-
             RefreshWindow();
         }
 
@@ -51,7 +48,7 @@ namespace GameKeeper.UI
         {
             lblNickname.Text = playerController.CurrentPlayer.NickName;
             lblId.Text = playerController.CurrentPlayer.Id;
-            tbxCash.Text = playerController.CurrentPlayer.Cash.ToString();
+            tbxCashInWallet.Text = playerController.CurrentPlayer.Cash.ToString();
         }
 
         #region Buttons - create player
@@ -78,7 +75,8 @@ namespace GameKeeper.UI
         #region Buttons - current player
         private void btnWallet_Click(object sender, EventArgs e)
         {
-            frmWallet = new FrmWallet(playerController);
+            Hide();
+            FrmWallet frmWallet = new FrmWallet(playerController);
             frmWallet.ShowDialog();
         }
 

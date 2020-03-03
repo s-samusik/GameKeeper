@@ -52,7 +52,7 @@
             this.btnQuests = new System.Windows.Forms.Button();
             this.btnKillPlayer = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbxCash = new System.Windows.Forms.TextBox();
+            this.tbxCashInWallet = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbxPlayersState = new System.Windows.Forms.TextBox();
             this.tbxQuests = new System.Windows.Forms.TextBox();
@@ -276,7 +276,7 @@
             this.tlpCurrentPlayer.Controls.Add(this.btnQuests, 1, 6);
             this.tlpCurrentPlayer.Controls.Add(this.btnKillPlayer, 1, 7);
             this.tlpCurrentPlayer.Controls.Add(this.label6, 1, 1);
-            this.tlpCurrentPlayer.Controls.Add(this.tbxCash, 2, 1);
+            this.tlpCurrentPlayer.Controls.Add(this.tbxCashInWallet, 2, 1);
             this.tlpCurrentPlayer.Controls.Add(this.label7, 1, 4);
             this.tlpCurrentPlayer.Controls.Add(this.tbxPlayersState, 2, 4);
             this.tlpCurrentPlayer.Controls.Add(this.tbxQuests, 2, 2);
@@ -475,19 +475,19 @@
             this.label6.Text = "total in wallet:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tbxCash
+            // tbxCashInWallet
             // 
-            this.tbxCash.BackColor = System.Drawing.Color.Silver;
-            this.tbxCash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxCash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxCash.Enabled = false;
-            this.tbxCash.Location = new System.Drawing.Point(230, 78);
-            this.tbxCash.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.tbxCash.MaxLength = 15;
-            this.tbxCash.Name = "tbxCash";
-            this.tbxCash.Size = new System.Drawing.Size(176, 29);
-            this.tbxCash.TabIndex = 9;
-            this.tbxCash.Text = "0";
+            this.tbxCashInWallet.BackColor = System.Drawing.Color.Silver;
+            this.tbxCashInWallet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxCashInWallet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxCashInWallet.Enabled = false;
+            this.tbxCashInWallet.Location = new System.Drawing.Point(230, 78);
+            this.tbxCashInWallet.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.tbxCashInWallet.MaxLength = 15;
+            this.tbxCashInWallet.Name = "tbxCashInWallet";
+            this.tbxCashInWallet.Size = new System.Drawing.Size(176, 29);
+            this.tbxCashInWallet.TabIndex = 9;
+            this.tbxCashInWallet.Text = "0";
             // 
             // label7
             // 
@@ -613,7 +613,7 @@
         private System.Windows.Forms.Button btnQuests;
         private System.Windows.Forms.Button btnKillPlayer;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbxCash;
+        private System.Windows.Forms.TextBox tbxCashInWallet;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbxPlayersState;
         private System.Windows.Forms.TextBox tbxQuests;
