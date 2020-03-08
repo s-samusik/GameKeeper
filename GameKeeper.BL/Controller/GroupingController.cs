@@ -6,8 +6,14 @@ namespace GameKeeper.BL.Controller
     public class GroupingController : BaseController
     {
         private const string GROUPING_FILE_NAME = "Groupings.dat";
+        private const string DEFAULT_GROUPING = "none";
 
         #region Properties
+        /// <summary>
+        /// This grouping is assigned to all new players.
+        /// </summary>
+        public Grouping DefaultGrouping { get; } = new Grouping(DEFAULT_GROUPING);
+
         /// <summary>
         /// List of groupings.
         /// </summary>
@@ -25,6 +31,11 @@ namespace GameKeeper.BL.Controller
             if (Groupings == null)
             {
                 Groupings = new List<Grouping>();
+            }
+
+            if (Groupings.Count == 0)
+            {
+                Groupings.Add(DefaultGrouping);
             }
 
             SaveAllGroupings();
@@ -46,10 +57,16 @@ namespace GameKeeper.BL.Controller
         /// Delete selected grouping in current game.
         /// </summary>
         /// <param name="index">Index of the item to be deleted.</param>
-        public void DelSelectedGrouping(int index)
+        /// <returns>Is this grouping has been deleted.</returns>
+        public bool DelSelectedGrouping(int index)
         {
-            Groupings.RemoveAt(index);
-            SaveAllGroupings();
+            if (index != 0)
+            {
+                Groupings.RemoveAt(index);
+                SaveAllGroupings();
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -58,9 +75,24 @@ namespace GameKeeper.BL.Controller
         public void DelAllGroupings()
         {
             Groupings.Clear();
+            Groupings.Add(DefaultGrouping);
             SaveAllGroupings();
         }
         
+        /// <summary>
+        /// Is grouping already exist.
+        /// </summary>
+        /// <param name="groupingName">Name of new grouping.</param>
+        /// <returns>Is grouping found.</returns>
+        public bool IsGroupingAlreadyExists(string groupingName)
+        {
+            foreach (var item in Groupings)
+            {
+                if (item.Name == groupingName) return true;
+            }
+            return false;
+        }
+
         /// <summary>
         /// Get current list of grouping from file.
         /// </summary>

@@ -9,7 +9,7 @@ namespace GameKeeper.BL.Model
         /// <summary>
         /// Name of grouping.
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; }
         #endregion
 
         /// <summary>
@@ -26,6 +26,11 @@ namespace GameKeeper.BL.Model
             #endregion
 
             Name = name;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GameKeeper.BL.Controller;
+using GameKeeper.BL.Model;
 using System;
 using System.Windows.Forms;
 
@@ -8,6 +9,7 @@ namespace GameKeeper.UI
     {
         private Form prevForm;
         PlayerController playerController;
+        GroupingController groupingController;
 
         #region constructor
         public FrmPlayer(string playerID)
@@ -16,6 +18,7 @@ namespace GameKeeper.UI
 
             prevForm = new FrmGame();
             playerController = new PlayerController(playerID);
+            groupingController = new GroupingController();
 
             if (playerController.IsCurrentPlayerNew)
             {
@@ -36,6 +39,8 @@ namespace GameKeeper.UI
             
             tbxID.Text = playerController.CurrentPlayer.Id;
             tbxPincode.Text = playerController.CreatePincode();
+
+            RefreshGroupingList(cbxNewGrouping);
         }
 
         private void ViewPanelCurrentPlayer(PlayerController playerController)
@@ -49,13 +54,22 @@ namespace GameKeeper.UI
             lblNickname.Text = playerController.CurrentPlayer.NickName;
             lblId.Text = playerController.CurrentPlayer.Id;
             tbxCashInWallet.Text = playerController.CurrentPlayer.Cash.ToString();
+            RefreshGroupingList(cbxCurrentGrouping);
+            cbxCurrentGrouping.Text = playerController.CurrentPlayer.Grouping.Name;
+        }
+
+        private void RefreshGroupingList(ComboBox comboBox)
+        {
+            comboBox.DataSource = null;
+            comboBox.DataSource = groupingController.Groupings;
+            comboBox.DisplayMember = "Name";
         }
 
         #region Buttons - create player
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
             var name = tbxName.Text;
-            var grouping = cbxNewGrouping.Text;
+            var grouping = cbxNewGrouping.SelectedItem.ToString();
             var pincode = tbxPincode.Text;
             _ = double.TryParse(tbxStartCash.Text, out double cash);
 
@@ -99,11 +113,22 @@ namespace GameKeeper.UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Current player will be deleted.\nAre you sure?", "Game keeper", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
+            if(result == DialogResult.OK)
+            {
+                playerController.DelCurrentPlayer(playerController.CurrentPlayer);
+                
+                Close();
+                prevForm.Show();
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            playerController.CurrentPlayer.Grouping = new Grouping(cbxCurrentGrouping.Text);
+            playerController.SavePlayersData();
+            
             Close();
             prevForm.Show();
         }

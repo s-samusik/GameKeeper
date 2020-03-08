@@ -105,7 +105,7 @@ namespace GameKeeper.BL.Controller
 
             SavePlayersData();
         }
-        
+
         /// <summary>
         /// Create pincode for new player.
         /// </summary>
@@ -114,8 +114,18 @@ namespace GameKeeper.BL.Controller
         {
             Random rnd = new Random();
             string result = string.Format("{0:d4}", rnd.Next(0, 9999));
-            
+
             return result;
+        }
+
+        /// <summary>
+        /// Delete current player from this game.
+        /// </summary>
+        /// <param name="currentPlayer">Current player in game.</param>
+        public void DelCurrentPlayer(Player currentPlayer)
+        {
+            Players.Remove(currentPlayer);
+            SavePlayersData();
         }
 
         /// <summary>
@@ -149,7 +159,7 @@ namespace GameKeeper.BL.Controller
             }
             #endregion
 
-            if(CurrentPlayer.Cash >= cash)
+            if (CurrentPlayer.Cash >= cash)
             {
                 CurrentPlayer.Cash -= cash;
                 SavePlayersData();

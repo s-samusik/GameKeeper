@@ -43,6 +43,7 @@
             this.tbxStartCash = new System.Windows.Forms.TextBox();
             this.cbxNewGrouping = new System.Windows.Forms.ComboBox();
             this.tlpCurrentPlayer = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblNickname = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.tbxPlayersState = new System.Windows.Forms.TextBox();
             this.tbxQuests = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.cbxCurrentGrouping = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcNewCurrent)).BeginInit();
             this.spcNewCurrent.Panel1.SuspendLayout();
@@ -251,6 +251,7 @@
             // cbxNewGrouping
             // 
             this.cbxNewGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbxNewGrouping.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNewGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxNewGrouping.FormattingEnabled = true;
             this.cbxNewGrouping.Location = new System.Drawing.Point(116, 267);
@@ -365,6 +366,16 @@
             this.tlpCurrentPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCurrentPlayer.Size = new System.Drawing.Size(455, 511);
             this.tlpCurrentPlayer.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(48, 189);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(176, 63);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "player\'s grouping:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblNickname
             // 
@@ -536,20 +547,11 @@
             this.label8.Text = "actived quests:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(48, 189);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(176, 63);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "player\'s grouping:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // cbxCurrentGrouping
             // 
             this.cbxCurrentGrouping.BackColor = System.Drawing.Color.Silver;
             this.cbxCurrentGrouping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbxCurrentGrouping.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCurrentGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxCurrentGrouping.FormattingEnabled = true;
             this.cbxCurrentGrouping.Location = new System.Drawing.Point(230, 204);

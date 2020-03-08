@@ -96,7 +96,7 @@ namespace GameKeeper.UI
 
         private void btnCompleteGame_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Current game will be deleted.\nAre you sure?", "Game keeper", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            var result = MessageBox.Show("Current game will be deleted.\nAre you sure?", "Game keeper", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
             if (result == DialogResult.OK)
             {

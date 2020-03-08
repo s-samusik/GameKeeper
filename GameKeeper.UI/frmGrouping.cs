@@ -12,7 +12,7 @@ namespace GameKeeper.UI
         public FrmGrouping()
         {
             InitializeComponent();
-            
+
             prevForm = new FrmGame();
             tbxNewGrouping.Focus();
 
@@ -37,9 +37,16 @@ namespace GameKeeper.UI
 
             if (!string.IsNullOrWhiteSpace(newGroupingName))
             {
-                groupingController.AddGrouping(newGroupingName);
-                MessageBox.Show($"Grouping \"{newGroupingName}\" successfully added.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                RefreshGroupingList();
+                if (groupingController.IsGroupingAlreadyExists(newGroupingName))
+                {
+                    MessageBox.Show($"Grouping \"{newGroupingName}\" already exists.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    groupingController.AddGrouping(newGroupingName);
+                    MessageBox.Show($"Grouping \"{newGroupingName}\" successfully added.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshGroupingList();
+                }
             }
 
             tbxNewGrouping.Text = string.Empty;
@@ -49,24 +56,35 @@ namespace GameKeeper.UI
         private void btnDelGrouping_Click(object sender, EventArgs e)
         {
             int selectedIndex = lbxGroupingsList.SelectedIndex;
+            int count = groupingController.Groupings.Count;
 
-            if (selectedIndex != -1)
+            if (selectedIndex != -1 & count > 1)
             {
-                groupingController.DelSelectedGrouping(selectedIndex);
-                RefreshGroupingList();
-
-                MessageBox.Show($"Grouping has been deleted.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (groupingController.DelSelectedGrouping(selectedIndex))
+                {
+                    RefreshGroupingList();
+                    MessageBox.Show($"Selected grouping has been deleted.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"It's not grouping.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-
         }
 
         private void btnDelAllGroupings_Click(object sender, EventArgs e)
         {
-            groupingController.DelAllGroupings();
-            RefreshGroupingList();
+            int count = groupingController.Groupings.Count;
 
-            tbxNewGrouping.Text = string.Empty;
-            tbxNewGrouping.Focus();
+            if (count > 1)
+            {
+                groupingController.DelAllGroupings();
+                RefreshGroupingList();
+
+                tbxNewGrouping.Text = string.Empty;
+                tbxNewGrouping.Focus();
+            }
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -80,7 +98,7 @@ namespace GameKeeper.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnAddGrouping_Click(this,null);
+                btnAddGrouping_Click(this, null);
             }
         }
 

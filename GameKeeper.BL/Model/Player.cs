@@ -103,5 +103,10 @@ namespace GameKeeper.BL.Model
             CountOfDeaths = 0;
             IsDead = false;
         }
+
+        public override string ToString()
+        {
+            return NickName;
+        }
     }
 }
