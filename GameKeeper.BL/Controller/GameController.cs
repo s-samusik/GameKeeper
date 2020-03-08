@@ -90,5 +90,10 @@ namespace GameKeeper.BL.Controller
         {
             Save(GAME_FILE_NAME, CurrentGame);
         }
+
+        public bool VerificationGame(string password)
+        {
+            return CurrentGame.Password == password;
+        }
     }
 }

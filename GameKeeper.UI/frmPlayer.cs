@@ -7,11 +7,13 @@ namespace GameKeeper.UI
 {
     public partial class FrmPlayer : Form
     {
-        private Form prevForm;
-        PlayerController playerController;
-        GroupingController groupingController;
+        public bool IsPlayerNew { get; } = true;
 
-        #region constructor
+        private Form prevForm;
+        private PlayerController playerController;
+        private GroupingController groupingController;
+
+        #region Constructor
         public FrmPlayer(string playerID)
         {
             InitializeComponent();
@@ -27,8 +29,8 @@ namespace GameKeeper.UI
             else
             {
                 ViewPanelCurrentPlayer(playerController);
+                IsPlayerNew = false;
             }
-
         }
         #endregion
 
@@ -36,7 +38,7 @@ namespace GameKeeper.UI
         {
             spcNewCurrent.Panel2Collapsed = true;
             Text = "Game keeper: create new player";
-            
+
             tbxID.Text = playerController.CurrentPlayer.Id;
             tbxPincode.Text = playerController.CreatePincode();
 
@@ -46,6 +48,8 @@ namespace GameKeeper.UI
         private void ViewPanelCurrentPlayer(PlayerController playerController)
         {
             spcNewCurrent.Panel1Collapsed = true;
+            Text = $"Game keeper: {playerController.CurrentPlayer.NickName}";
+
             RefreshWindow();
         }
 
@@ -69,15 +73,25 @@ namespace GameKeeper.UI
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
             var name = tbxName.Text;
-            var grouping = cbxNewGrouping.SelectedItem.ToString();
-            var pincode = tbxPincode.Text;
-            _ = double.TryParse(tbxStartCash.Text, out double cash);
 
-            playerController.SetNewPlayerData(name, grouping, pincode, cash);
-            Close();
-            prevForm.Show();
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                MessageBox.Show("Please enter nickname for this player.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                var grouping = cbxNewGrouping.SelectedItem.ToString();
+                var pincode = tbxPincode.Text;
+                _ = double.TryParse(tbxStartCash.Text, out double cash);
+
+                playerController.SetNewPlayerData(name, grouping, pincode, cash);
+
+                MessageBox.Show($"\"{name}\" successfully added to game.", "Game keeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+                prevForm.Show();
+            }
         }
-        
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
@@ -115,10 +129,10 @@ namespace GameKeeper.UI
         {
             var result = MessageBox.Show("Current player will be deleted.\nAre you sure?", "Game keeper", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 playerController.DelCurrentPlayer(playerController.CurrentPlayer);
-                
+
                 Close();
                 prevForm.Show();
             }
@@ -128,7 +142,7 @@ namespace GameKeeper.UI
         {
             playerController.CurrentPlayer.Grouping = new Grouping(cbxCurrentGrouping.Text);
             playerController.SavePlayersData();
-            
+
             Close();
             prevForm.Show();
         }

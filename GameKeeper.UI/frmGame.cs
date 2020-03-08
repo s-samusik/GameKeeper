@@ -6,8 +6,11 @@ namespace GameKeeper.UI
 {
     public partial class FrmGame : Form
     {
-        private Form frmPlayer;
-        GameController gameController;
+        public bool IsVerification { get; set; } = false;
+
+        private FrmPlayer frmPlayer;
+        private Form frmVerification;
+        private GameController gameController;
 
         #region Constructor
         public FrmGame()
@@ -109,8 +112,8 @@ namespace GameKeeper.UI
         private void btnCloseKeeper_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Current game will be saved.\nSee you later.", "Game keeper", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            
-            if(result == DialogResult.OK)
+
+            if (result == DialogResult.OK)
             {
                 Application.Exit();
             }
@@ -122,9 +125,26 @@ namespace GameKeeper.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Hide();
                 frmPlayer = new FrmPlayer(tbxID.Text);
-                frmPlayer.ShowDialog();
+
+                if (frmPlayer.IsPlayerNew)
+                {
+                    Hide();
+                    frmPlayer.Show();
+                }
+                else
+                {
+                    frmVerification = new FrmVerification(this);
+                    frmVerification.ShowDialog();
+
+                    tbxID.Text = string.Empty;
+
+                    if (IsVerification)
+                    {
+                        Hide();
+                        frmPlayer.Show();
+                    }
+                }
             }
         }
     }

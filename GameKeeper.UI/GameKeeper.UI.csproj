@@ -64,6 +64,12 @@
     <Compile Include="FrmPlayer.Designer.cs">
       <DependentUpon>FrmPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerification.Designer.cs">
+      <DependentUpon>FrmVerification.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmWallet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPlayer.resx">
       <DependentUpon>FrmPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerification.resx">
+      <DependentUpon>FrmVerification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWallet.resx">
       <DependentUpon>FrmWallet.cs</DependentUpon>

@@ -7,8 +7,9 @@ namespace GameKeeper.UI
     public partial class FrmGrouping : Form
     {
         private Form prevForm;
-        GroupingController groupingController;
+        private GroupingController groupingController;
 
+        #region Constructor
         public FrmGrouping()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace GameKeeper.UI
             groupingController = new GroupingController();
             RefreshGroupingList();
         }
+        #endregion
 
         /// <summary>
         /// Updating data in the listbox "GroupingsList".
@@ -33,7 +35,7 @@ namespace GameKeeper.UI
         #region Buttons
         private void btnAddGrouping_Click(object sender, EventArgs e)
         {
-            var newGroupingName = tbxNewGrouping.Text;
+            var newGroupingName = tbxNewGrouping.Text.Trim();
 
             if (!string.IsNullOrWhiteSpace(newGroupingName))
             {
