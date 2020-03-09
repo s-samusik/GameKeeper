@@ -8,6 +8,7 @@ namespace GameKeeper.UI
     public partial class FrmPlayer : Form
     {
         public bool IsPlayerNew { get; } = true;
+        public double CashInWallet { get; set; }
 
         private Form prevForm;
         private PlayerController playerController;
@@ -49,6 +50,7 @@ namespace GameKeeper.UI
         {
             spcNewCurrent.Panel1Collapsed = true;
             Text = $"Game keeper: {playerController.CurrentPlayer.NickName}";
+            CashInWallet = playerController.CurrentPlayer.Cash;
 
             RefreshWindow();
         }
@@ -57,7 +59,7 @@ namespace GameKeeper.UI
         {
             lblNickname.Text = playerController.CurrentPlayer.NickName;
             lblId.Text = playerController.CurrentPlayer.Id;
-            tbxCashInWallet.Text = playerController.CurrentPlayer.Cash.ToString();
+            tbxCashInWallet.Text = CashInWallet.ToString();
             RefreshGroupingList(cbxCurrentGrouping);
             cbxCurrentGrouping.Text = playerController.CurrentPlayer.Grouping.Name;
         }
@@ -82,7 +84,7 @@ namespace GameKeeper.UI
             {
                 var grouping = cbxNewGrouping.SelectedItem.ToString();
                 var pincode = tbxPincode.Text;
-                _ = double.TryParse(tbxStartCash.Text, out double cash);
+                double.TryParse(tbxStartCash.Text, out double cash);
 
                 playerController.SetNewPlayerData(name, grouping, pincode, cash);
 
@@ -103,8 +105,7 @@ namespace GameKeeper.UI
         #region Buttons - current player
         private void btnWallet_Click(object sender, EventArgs e)
         {
-            Hide();
-            FrmWallet frmWallet = new FrmWallet(playerController);
+            FrmWallet frmWallet = new FrmWallet(this);
             frmWallet.ShowDialog();
         }
 
@@ -141,6 +142,7 @@ namespace GameKeeper.UI
         private void btnBack_Click(object sender, EventArgs e)
         {
             playerController.CurrentPlayer.Grouping = new Grouping(cbxCurrentGrouping.Text);
+            playerController.CurrentPlayer.Cash = double.Parse(tbxCashInWallet.Text);
             playerController.SavePlayersData();
 
             Close();

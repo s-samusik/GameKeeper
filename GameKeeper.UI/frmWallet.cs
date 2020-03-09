@@ -1,49 +1,53 @@
-﻿using GameKeeper.BL.Controller;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace GameKeeper.UI
 {
     public partial class FrmWallet : Form
     {
-        PlayerController playerController;
-        FrmPlayer prevForm;
-        public FrmWallet(PlayerController player)
+        private FrmPlayer prevForm;
+        private double cashResult;
+
+        #region Constructor
+        public FrmWallet(FrmPlayer form)
         {
             InitializeComponent();
-            playerController = player;
-            prevForm = new FrmPlayer(playerController.CurrentPlayer.Id);
+            prevForm = form;
+            cashResult = prevForm.CashInWallet;
 
             RefreshWindow();
         }
-
+        #endregion
         private void RefreshWindow()
         {
-            tbxInWallet.Text = playerController.CurrentPlayer.Cash.ToString();
             tbxCashAmount.Text = "0";
             tbxCashAmount.Focus();
+            tbxInWallet.Text = cashResult.ToString();
         }
 
         #region Buttons
         private void btnCloseWallet_Click(object sender, EventArgs e)
         {
+            prevForm.CashInWallet = double.Parse(tbxInWallet.Text);
+            prevForm.RefreshWindow();
             Close();
-            prevForm.Show();
         }
 
         private void btnAddCash_Click(object sender, EventArgs e)
         {
-            var cash = double.Parse(tbxCashAmount.Text);
-            playerController.PutInWallet(cash);
+            double.TryParse(tbxCashAmount.Text, out var cash);
+            cashResult += cash;
+
             RefreshWindow();
         }
 
         private void btnRemoveCash_Click(object sender, EventArgs e)
         {
-            var cash = double.Parse(tbxCashAmount.Text);
+            double.TryParse(tbxCashAmount.Text, out var cash);
 
-            if (playerController.WithdrawFromWallet(cash))
+            if (cashResult >= cash)
             {
+                cashResult -= cash;
                 RefreshWindow();
             }
             else
@@ -51,6 +55,12 @@ namespace GameKeeper.UI
                 MessageBox.Show("Cash amount is more than cash in the wallet.","Game Keeper",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
 
+        }
+
+        private void btnTakeAllMoney_Click(object sender, EventArgs e)
+        {
+            cashResult = 0;
+            RefreshWindow();
         }
         #endregion
 
