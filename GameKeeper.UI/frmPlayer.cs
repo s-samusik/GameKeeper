@@ -51,7 +51,6 @@ namespace GameKeeper.UI
             spcNewCurrent.Panel1Collapsed = true;
             Text = $"Game keeper: {playerController.CurrentPlayer.NickName}";
             CashInWallet = playerController.CurrentPlayer.Cash;
-
             RefreshWindow();
         }
 
@@ -62,6 +61,7 @@ namespace GameKeeper.UI
             tbxCashInWallet.Text = CashInWallet.ToString();
             RefreshGroupingList(cbxCurrentGrouping);
             cbxCurrentGrouping.Text = playerController.CurrentPlayer.Grouping.Name;
+            tbxPlayersState.Text = playerController.ReturnPlayerState();
         }
 
         private void RefreshGroupingList(ComboBox comboBox)
@@ -116,7 +116,9 @@ namespace GameKeeper.UI
 
         private void btnKillPlayer_Click(object sender, EventArgs e)
         {
-
+            playerController.CurrentPlayer.IsDead = !playerController.CurrentPlayer.IsDead;
+            
+            tbxPlayersState.Text = playerController.ReturnPlayerState();
         }
 
         private void btnViewPin_Click(object sender, EventArgs e)
@@ -132,7 +134,7 @@ namespace GameKeeper.UI
 
             if (result == DialogResult.OK)
             {
-                playerController.DelCurrentPlayer(playerController.CurrentPlayer);
+                playerController.DelCurrentPlayer();
 
                 Close();
                 prevForm.Show();

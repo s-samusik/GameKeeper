@@ -122,50 +122,26 @@ namespace GameKeeper.BL.Controller
         /// Delete current player from this game.
         /// </summary>
         /// <param name="currentPlayer">Current player in game.</param>
-        public void DelCurrentPlayer(Player currentPlayer)
+        public void DelCurrentPlayer()
         {
-            Players.Remove(currentPlayer);
+            Players.Remove(CurrentPlayer);
             SavePlayersData();
         }
 
         /// <summary>
-        /// Put cash in wallet.
+        /// Return current state of player.
         /// </summary>
-        /// <param name="cash">Cash amount.</param>
-        public void PutInWallet(double cash)
+        /// <returns>Player's state.</returns>
+        public string ReturnPlayerState()
         {
-            #region Verification of conditions
-            if (cash < 0)
-            {
-                throw new ArgumentException("Сумма не может быть меньше нуля.", nameof(cash));
-            }
-            #endregion
+            bool isDead = CurrentPlayer.IsDead;
 
-            CurrentPlayer.Cash += cash;
-            SavePlayersData();
-        }
-
-        /// <summary>
-        /// Withdraw cash from wallet.
-        /// </summary>
-        /// <param name="cash">Cash amount.</param>
-        /// <returns>The withdraw was successful.</returns>
-        public bool WithdrawFromWallet(double cash)
-        {
-            #region Verification of conditions
-            if (cash < 0)
+            if (isDead)
             {
-                throw new ArgumentException("Сумма не может быть меньше нуля.", nameof(cash));
+                return "killed. Left: 01:59:59";
             }
-            #endregion
 
-            if (CurrentPlayer.Cash >= cash)
-            {
-                CurrentPlayer.Cash -= cash;
-                SavePlayersData();
-                return true;
-            }
-            return false;
+            return "alive";
         }
     }
 }

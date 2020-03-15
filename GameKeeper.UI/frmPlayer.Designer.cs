@@ -77,12 +77,13 @@
             // spcNewCurrent.Panel1
             // 
             this.spcNewCurrent.Panel1.Controls.Add(this.tlpNewPlayer);
+            this.spcNewCurrent.Panel1Collapsed = true;
             // 
             // spcNewCurrent.Panel2
             // 
             this.spcNewCurrent.Panel2.Controls.Add(this.tlpCurrentPlayer);
-            this.spcNewCurrent.Size = new System.Drawing.Size(656, 483);
-            this.spcNewCurrent.SplitterDistance = 214;
+            this.spcNewCurrent.Size = new System.Drawing.Size(652, 479);
+            this.spcNewCurrent.SplitterDistance = 212;
             this.spcNewCurrent.SplitterWidth = 1;
             this.spcNewCurrent.TabIndex = 0;
             // 
@@ -118,7 +119,7 @@
             this.tlpNewPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpNewPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpNewPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpNewPlayer.Size = new System.Drawing.Size(214, 483);
+            this.tlpNewPlayer.Size = new System.Drawing.Size(212, 479);
             this.tlpNewPlayer.TabIndex = 0;
             // 
             // btnCancel
@@ -126,9 +127,9 @@
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(109, 423);
+            this.btnCancel.Location = new System.Drawing.Point(108, 416);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(79, 57);
+            this.btnCancel.Size = new System.Drawing.Size(78, 60);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -137,9 +138,9 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(24, 300);
+            this.label5.Location = new System.Drawing.Point(24, 295);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 60);
+            this.label5.Size = new System.Drawing.Size(78, 59);
             this.label5.TabIndex = 5;
             this.label5.Text = "start-up cash:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,9 +148,9 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(24, 240);
+            this.label4.Location = new System.Drawing.Point(24, 236);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 60);
+            this.label4.Size = new System.Drawing.Size(78, 59);
             this.label4.TabIndex = 4;
             this.label4.Text = "change grouping:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -157,9 +158,9 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(24, 60);
+            this.label2.Location = new System.Drawing.Point(24, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 60);
+            this.label2.Size = new System.Drawing.Size(78, 59);
             this.label2.TabIndex = 3;
             this.label2.Text = "unique  pincode:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,9 +168,9 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(24, 180);
+            this.label3.Location = new System.Drawing.Point(24, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 60);
+            this.label3.Size = new System.Drawing.Size(78, 59);
             this.label3.TabIndex = 2;
             this.label3.Text = "enter nickname:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,7 +180,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(24, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 60);
+            this.label1.Size = new System.Drawing.Size(78, 59);
             this.label1.TabIndex = 0;
             this.label1.Text = "unique  ID:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -189,9 +190,9 @@
             this.btnAddPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddPlayer.FlatAppearance.BorderSize = 0;
             this.btnAddPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPlayer.Location = new System.Drawing.Point(24, 423);
+            this.btnAddPlayer.Location = new System.Drawing.Point(24, 416);
             this.btnAddPlayer.Name = "btnAddPlayer";
-            this.btnAddPlayer.Size = new System.Drawing.Size(79, 57);
+            this.btnAddPlayer.Size = new System.Drawing.Size(78, 60);
             this.btnAddPlayer.TabIndex = 3;
             this.btnAddPlayer.Text = "Add player to game";
             this.btnAddPlayer.UseVisualStyleBackColor = true;
@@ -203,11 +204,11 @@
             this.tbxID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxID.Enabled = false;
-            this.tbxID.Location = new System.Drawing.Point(109, 15);
+            this.tbxID.Location = new System.Drawing.Point(108, 15);
             this.tbxID.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.tbxID.MaxLength = 30;
             this.tbxID.Name = "tbxID";
-            this.tbxID.Size = new System.Drawing.Size(79, 29);
+            this.tbxID.Size = new System.Drawing.Size(78, 29);
             this.tbxID.TabIndex = 8;
             this.tbxID.Text = "083492973750";
             // 
@@ -217,11 +218,11 @@
             this.tbxPincode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPincode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxPincode.Enabled = false;
-            this.tbxPincode.Location = new System.Drawing.Point(109, 75);
+            this.tbxPincode.Location = new System.Drawing.Point(108, 74);
             this.tbxPincode.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.tbxPincode.MaxLength = 4;
             this.tbxPincode.Name = "tbxPincode";
-            this.tbxPincode.Size = new System.Drawing.Size(79, 29);
+            this.tbxPincode.Size = new System.Drawing.Size(78, 29);
             this.tbxPincode.TabIndex = 9;
             this.tbxPincode.Text = "4512";
             // 
@@ -229,21 +230,21 @@
             // 
             this.tbxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxName.Location = new System.Drawing.Point(109, 195);
+            this.tbxName.Location = new System.Drawing.Point(108, 192);
             this.tbxName.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.tbxName.MaxLength = 30;
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(79, 29);
+            this.tbxName.Size = new System.Drawing.Size(78, 29);
             this.tbxName.TabIndex = 0;
             // 
             // tbxStartCash
             // 
             this.tbxStartCash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxStartCash.Location = new System.Drawing.Point(109, 315);
+            this.tbxStartCash.Location = new System.Drawing.Point(108, 310);
             this.tbxStartCash.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.tbxStartCash.MaxLength = 30;
             this.tbxStartCash.Name = "tbxStartCash";
-            this.tbxStartCash.Size = new System.Drawing.Size(79, 29);
+            this.tbxStartCash.Size = new System.Drawing.Size(78, 29);
             this.tbxStartCash.TabIndex = 2;
             this.tbxStartCash.Text = "0";
             this.tbxStartCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxStartCash_KeyPress);
@@ -254,10 +255,10 @@
             this.cbxNewGrouping.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNewGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxNewGrouping.FormattingEnabled = true;
-            this.cbxNewGrouping.Location = new System.Drawing.Point(109, 255);
+            this.cbxNewGrouping.Location = new System.Drawing.Point(108, 251);
             this.cbxNewGrouping.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.cbxNewGrouping.Name = "cbxNewGrouping";
-            this.cbxNewGrouping.Size = new System.Drawing.Size(79, 29);
+            this.cbxNewGrouping.Size = new System.Drawing.Size(78, 29);
             this.cbxNewGrouping.TabIndex = 1;
             // 
             // tlpCurrentPlayer
@@ -364,15 +365,15 @@
             this.tlpCurrentPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCurrentPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpCurrentPlayer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpCurrentPlayer.Size = new System.Drawing.Size(441, 483);
+            this.tlpCurrentPlayer.Size = new System.Drawing.Size(652, 479);
             this.tlpCurrentPlayer.TabIndex = 0;
             // 
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(47, 180);
+            this.label9.Location = new System.Drawing.Point(68, 177);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(170, 60);
+            this.label9.Size = new System.Drawing.Size(254, 59);
             this.label9.TabIndex = 14;
             this.label9.Text = "player\'s grouping:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -380,9 +381,9 @@
             // lblNickname
             // 
             this.lblNickname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNickname.Location = new System.Drawing.Point(47, 0);
+            this.lblNickname.Location = new System.Drawing.Point(68, 0);
             this.lblNickname.Name = "lblNickname";
-            this.lblNickname.Size = new System.Drawing.Size(170, 60);
+            this.lblNickname.Size = new System.Drawing.Size(254, 59);
             this.lblNickname.TabIndex = 0;
             this.lblNickname.Text = "nickname: ";
             this.lblNickname.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -390,9 +391,9 @@
             // lblId
             // 
             this.lblId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblId.Location = new System.Drawing.Point(223, 0);
+            this.lblId.Location = new System.Drawing.Point(328, 0);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(170, 60);
+            this.lblId.Size = new System.Drawing.Size(254, 59);
             this.lblId.TabIndex = 1;
             this.lblId.Text = "player\'s ID";
             this.lblId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -402,9 +403,9 @@
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(223, 423);
+            this.btnBack.Location = new System.Drawing.Point(328, 416);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(170, 57);
+            this.btnBack.Size = new System.Drawing.Size(254, 60);
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Back to main window";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -416,9 +417,9 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(223, 363);
+            this.btnDelete.Location = new System.Drawing.Point(328, 357);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(170, 54);
+            this.btnDelete.Size = new System.Drawing.Size(254, 53);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete  the player from game";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -429,9 +430,9 @@
             this.btnViewPin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnViewPin.FlatAppearance.BorderSize = 0;
             this.btnViewPin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewPin.Location = new System.Drawing.Point(223, 303);
+            this.btnViewPin.Location = new System.Drawing.Point(328, 298);
             this.btnViewPin.Name = "btnViewPin";
-            this.btnViewPin.Size = new System.Drawing.Size(170, 54);
+            this.btnViewPin.Size = new System.Drawing.Size(254, 53);
             this.btnViewPin.TabIndex = 4;
             this.btnViewPin.Text = "View pincode";
             this.btnViewPin.UseVisualStyleBackColor = true;
@@ -442,9 +443,9 @@
             this.btnWallet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnWallet.FlatAppearance.BorderSize = 0;
             this.btnWallet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWallet.Location = new System.Drawing.Point(47, 303);
+            this.btnWallet.Location = new System.Drawing.Point(68, 298);
             this.btnWallet.Name = "btnWallet";
-            this.btnWallet.Size = new System.Drawing.Size(170, 54);
+            this.btnWallet.Size = new System.Drawing.Size(254, 53);
             this.btnWallet.TabIndex = 5;
             this.btnWallet.Text = "Wallet";
             this.btnWallet.UseVisualStyleBackColor = true;
@@ -455,9 +456,9 @@
             this.btnQuests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnQuests.FlatAppearance.BorderSize = 0;
             this.btnQuests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuests.Location = new System.Drawing.Point(47, 363);
+            this.btnQuests.Location = new System.Drawing.Point(68, 357);
             this.btnQuests.Name = "btnQuests";
-            this.btnQuests.Size = new System.Drawing.Size(170, 54);
+            this.btnQuests.Size = new System.Drawing.Size(254, 53);
             this.btnQuests.TabIndex = 6;
             this.btnQuests.Text = "Quests";
             this.btnQuests.UseVisualStyleBackColor = true;
@@ -468,9 +469,9 @@
             this.btnKillPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnKillPlayer.FlatAppearance.BorderSize = 0;
             this.btnKillPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKillPlayer.Location = new System.Drawing.Point(47, 423);
+            this.btnKillPlayer.Location = new System.Drawing.Point(68, 416);
             this.btnKillPlayer.Name = "btnKillPlayer";
-            this.btnKillPlayer.Size = new System.Drawing.Size(170, 57);
+            this.btnKillPlayer.Size = new System.Drawing.Size(254, 60);
             this.btnKillPlayer.TabIndex = 7;
             this.btnKillPlayer.Text = "Kill the player";
             this.btnKillPlayer.UseVisualStyleBackColor = true;
@@ -479,9 +480,9 @@
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(47, 60);
+            this.label6.Location = new System.Drawing.Point(68, 59);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 60);
+            this.label6.Size = new System.Drawing.Size(254, 59);
             this.label6.TabIndex = 8;
             this.label6.Text = "total in wallet:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -492,20 +493,20 @@
             this.tbxCashInWallet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxCashInWallet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxCashInWallet.Enabled = false;
-            this.tbxCashInWallet.Location = new System.Drawing.Point(223, 75);
+            this.tbxCashInWallet.Location = new System.Drawing.Point(328, 74);
             this.tbxCashInWallet.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.tbxCashInWallet.MaxLength = 15;
             this.tbxCashInWallet.Name = "tbxCashInWallet";
-            this.tbxCashInWallet.Size = new System.Drawing.Size(170, 29);
+            this.tbxCashInWallet.Size = new System.Drawing.Size(254, 29);
             this.tbxCashInWallet.TabIndex = 9;
             this.tbxCashInWallet.Text = "0";
             // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(47, 240);
+            this.label7.Location = new System.Drawing.Point(68, 236);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(170, 60);
+            this.label7.Size = new System.Drawing.Size(254, 59);
             this.label7.TabIndex = 10;
             this.label7.Text = "player\'s state:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -516,12 +517,11 @@
             this.tbxPlayersState.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPlayersState.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxPlayersState.Enabled = false;
-            this.tbxPlayersState.Location = new System.Drawing.Point(223, 255);
+            this.tbxPlayersState.Location = new System.Drawing.Point(328, 251);
             this.tbxPlayersState.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.tbxPlayersState.Name = "tbxPlayersState";
-            this.tbxPlayersState.Size = new System.Drawing.Size(170, 29);
+            this.tbxPlayersState.Size = new System.Drawing.Size(254, 29);
             this.tbxPlayersState.TabIndex = 11;
-            this.tbxPlayersState.Text = "killed, 00:15:11 left";
             // 
             // tbxQuests
             // 
@@ -529,20 +529,20 @@
             this.tbxQuests.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxQuests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxQuests.Enabled = false;
-            this.tbxQuests.Location = new System.Drawing.Point(223, 135);
+            this.tbxQuests.Location = new System.Drawing.Point(328, 133);
             this.tbxQuests.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.tbxQuests.MaxLength = 15;
             this.tbxQuests.Name = "tbxQuests";
-            this.tbxQuests.Size = new System.Drawing.Size(170, 29);
+            this.tbxQuests.Size = new System.Drawing.Size(254, 29);
             this.tbxQuests.TabIndex = 12;
             this.tbxQuests.Text = "0";
             // 
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(47, 120);
+            this.label8.Location = new System.Drawing.Point(68, 118);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(170, 60);
+            this.label8.Size = new System.Drawing.Size(254, 59);
             this.label8.TabIndex = 13;
             this.label8.Text = "actived quests:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -554,10 +554,10 @@
             this.cbxCurrentGrouping.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCurrentGrouping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxCurrentGrouping.FormattingEnabled = true;
-            this.cbxCurrentGrouping.Location = new System.Drawing.Point(223, 195);
+            this.cbxCurrentGrouping.Location = new System.Drawing.Point(328, 192);
             this.cbxCurrentGrouping.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.cbxCurrentGrouping.Name = "cbxCurrentGrouping";
-            this.cbxCurrentGrouping.Size = new System.Drawing.Size(170, 29);
+            this.cbxCurrentGrouping.Size = new System.Drawing.Size(254, 29);
             this.cbxCurrentGrouping.TabIndex = 15;
             // 
             // FrmPlayer
@@ -565,7 +565,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(656, 483);
+            this.ClientSize = new System.Drawing.Size(652, 479);
             this.ControlBox = false;
             this.Controls.Add(this.spcNewCurrent);
             this.DoubleBuffered = true;
