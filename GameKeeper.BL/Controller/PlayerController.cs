@@ -25,6 +25,11 @@ namespace GameKeeper.BL.Controller
         /// Current player is new.
         /// </summary>
         public bool IsCurrentPlayerNew { get; set; } = false;
+
+        /// <summary>
+        /// Dead time for current player until next respawn.
+        /// </summary>
+        public int DeadTime { get; set; }
         #endregion
 
         #region Constructors
@@ -143,5 +148,6 @@ namespace GameKeeper.BL.Controller
 
             return "alive";
         }
+
     }
 }

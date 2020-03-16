@@ -58,6 +58,12 @@
     <Compile Include="FrmGrouping.Designer.cs">
       <DependentUpon>FrmGrouping.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMurder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMurder.Designer.cs">
+      <DependentUpon>FrmMurder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGrouping.resx">
       <DependentUpon>FrmGrouping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMurder.resx">
+      <DependentUpon>FrmMurder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPlayer.resx">
       <DependentUpon>FrmPlayer.cs</DependentUpon>

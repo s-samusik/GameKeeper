@@ -116,9 +116,12 @@ namespace GameKeeper.UI
 
         private void btnKillPlayer_Click(object sender, EventArgs e)
         {
-            playerController.CurrentPlayer.IsDead = !playerController.CurrentPlayer.IsDead;
-            
-            tbxPlayersState.Text = playerController.ReturnPlayerState();
+            //playerController.CurrentPlayer.IsDead = !playerController.CurrentPlayer.IsDead;
+
+            //tbxPlayersState.Text = playerController.ReturnPlayerState();
+
+            FrmMurder frmMurder = new FrmMurder(playerController);
+            frmMurder.ShowDialog();
         }
 
         private void btnViewPin_Click(object sender, EventArgs e)
