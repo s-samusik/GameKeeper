@@ -1,12 +1,5 @@
 ﻿using GameKeeper.BL.Controller;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GameKeeper.UI
@@ -14,19 +7,28 @@ namespace GameKeeper.UI
     public partial class FrmMurder : Form
     {
         private PlayerController playerController;
+
+        private int hours;
+        private int minutes;
+
         public FrmMurder(PlayerController currentPlayer)
         {
             InitializeComponent();
             playerController = currentPlayer;
 
             Text = $"GameKeeper: kill {playerController.CurrentPlayer.NickName}";
-            tbTime.Scroll += TbTime_Scroll;
+            tbxTimeLeft.Text = $"{hours} hours, {minutes} minutes";
+
+            numMinutes.ValueChanged += TimeLeft_ValueChanged;
+            numHours.ValueChanged += TimeLeft_ValueChanged;
         }
 
-        private void TbTime_Scroll(object sender, EventArgs e)
+        private void TimeLeft_ValueChanged(object sender, EventArgs e)
         {
-            playerController.DeadTime = tbTime.Value;
-            lblDeadTime.Text = $"{playerController.DeadTime} min.";
+            hours = (int)numHours.Value;
+            minutes = (int)numMinutes.Value;
+
+            tbxTimeLeft.Text = $"{hours} hours, {minutes} minutes";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -36,11 +38,15 @@ namespace GameKeeper.UI
 
         private void btnKillPlayer_Click(object sender, EventArgs e)
         {
-            lblDeadTime.ForeColor = Color.DarkGray;
-            tbTime.Enabled = false;
-            tbxTimeLeft.BackColor = Color.Red;
-            tbxTimeLeft.ForeColor = Color.White;
-            tbxTimeLeft.Text = lblDeadTime.Text;
+            var result = MessageBox.Show($"{playerController.CurrentPlayer.NickName} will be dead {tbxTimeLeft.Text}.\nAre you sure?", "Game keeper", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                lblSummary.Text = "time before respawn:";
+                numHours.Enabled = false;
+                numMinutes.Enabled = false;
+                btnKillPlayer.Enabled = false;
+            }
         }
     }
 }
