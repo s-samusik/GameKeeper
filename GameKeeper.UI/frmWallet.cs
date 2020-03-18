@@ -29,7 +29,6 @@ namespace GameKeeper.UI
         private void btnCloseWallet_Click(object sender, EventArgs e)
         {
             prevForm.CashInWallet = double.Parse(tbxInWallet.Text);
-            prevForm.RefreshWindow();
             Close();
         }
 

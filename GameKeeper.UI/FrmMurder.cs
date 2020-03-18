@@ -31,7 +31,7 @@ namespace GameKeeper.UI
             tbxTimeLeft.Text = $"{hours} hours, {minutes} minutes";
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -42,6 +42,10 @@ namespace GameKeeper.UI
 
             if (result == DialogResult.OK)
             {
+                playerController.CurrentPlayer.DeadTimeInMinutes = hours * 60 + minutes;
+                playerController.CurrentPlayer.IsDead = true;
+                playerController.PlayerStateAsync();
+
                 lblSummary.Text = "time before respawn:";
                 numHours.Enabled = false;
                 numMinutes.Enabled = false;

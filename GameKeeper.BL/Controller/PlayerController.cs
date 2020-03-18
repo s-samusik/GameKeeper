@@ -2,11 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace GameKeeper.BL.Controller
 {
     public class PlayerController : BaseController
     {
+        public delegate void MethodContainer();
+
+        public event MethodContainer OnRespawn;
+
+
         private const string PLAYERS_FILE_NAME = "Players.dat";
 
         #region Properties
@@ -25,11 +32,6 @@ namespace GameKeeper.BL.Controller
         /// Current player is new.
         /// </summary>
         public bool IsCurrentPlayerNew { get; set; } = false;
-
-        /// <summary>
-        /// Dead time for current player until next respawn.
-        /// </summary>
-        public int DeadTime { get; set; }
         #endregion
 
         #region Constructors
@@ -139,15 +141,28 @@ namespace GameKeeper.BL.Controller
         /// <returns>Player's state.</returns>
         public string ReturnPlayerState()
         {
-            bool isDead = CurrentPlayer.IsDead;
-
-            if (isDead)
+            if (CurrentPlayer.IsDead)
             {
-                return "killed. Left: 01:59:59";
+                return $"killed. Time left: {TimeSpan.FromMinutes(CurrentPlayer.DeadTimeInMinutes).ToString(@"hh\:mm")}";
             }
-
             return "alive";
         }
 
+        public async Task PlayerStateAsync()
+        {
+            await Task.Run(() => TimeCounter());
+            CurrentPlayer.IsDead = false;
+            OnRespawn();
+            SavePlayersData();
+        }
+
+        private void TimeCounter()
+        {
+            while (CurrentPlayer.DeadTimeInMinutes > 0)
+            {
+                CurrentPlayer.DeadTimeInMinutes--;
+                Thread.Sleep(60000);
+            }
+        }
     }
 }

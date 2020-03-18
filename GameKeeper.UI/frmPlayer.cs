@@ -31,6 +31,13 @@ namespace GameKeeper.UI
             {
                 ViewPanelCurrentPlayer(playerController);
                 IsPlayerNew = false;
+                playerController.OnRespawn += PlayerController_OnRespawn;
+                timer.Start();
+
+                if (playerController.CurrentPlayer.IsDead)
+                {
+                    playerController.PlayerStateAsync();
+                }
             }
         }
         #endregion
@@ -51,7 +58,6 @@ namespace GameKeeper.UI
             spcNewCurrent.Panel1Collapsed = true;
             Text = $"Game keeper: {playerController.CurrentPlayer.NickName}";
             CashInWallet = playerController.CurrentPlayer.Cash;
-            RefreshWindow();
         }
 
         public void RefreshWindow()
@@ -62,6 +68,12 @@ namespace GameKeeper.UI
             RefreshGroupingList(cbxCurrentGrouping);
             cbxCurrentGrouping.Text = playerController.CurrentPlayer.Grouping.Name;
             tbxPlayersState.Text = playerController.ReturnPlayerState();
+            
+        }
+
+        private void PlayerController_OnRespawn()
+        {
+            MessageBox.Show($"{ playerController.CurrentPlayer.NickName} alive.","GameKeeper",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void RefreshGroupingList(ComboBox comboBox)
@@ -116,10 +128,6 @@ namespace GameKeeper.UI
 
         private void btnKillPlayer_Click(object sender, EventArgs e)
         {
-            //playerController.CurrentPlayer.IsDead = !playerController.CurrentPlayer.IsDead;
-
-            //tbxPlayersState.Text = playerController.ReturnPlayerState();
-
             FrmMurder frmMurder = new FrmMurder(playerController);
             frmMurder.ShowDialog();
         }
@@ -159,6 +167,11 @@ namespace GameKeeper.UI
         {
             if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
                 e.Handled = true;
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            RefreshWindow();
         }
     }
 }

@@ -44,7 +44,6 @@
             // 
             // tlpMurder
             // 
-            this.tlpMurder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tlpMurder.ColumnCount = 4;
             this.tlpMurder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tlpMurder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
@@ -58,6 +57,7 @@
             this.tlpMurder.Controls.Add(this.numHours, 2, 0);
             this.tlpMurder.Controls.Add(this.label2, 1, 1);
             this.tlpMurder.Controls.Add(this.numMinutes, 2, 1);
+            this.tlpMurder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMurder.Location = new System.Drawing.Point(0, 0);
             this.tlpMurder.Name = "tlpMurder";
             this.tlpMurder.RowCount = 5;
@@ -66,7 +66,7 @@
             this.tlpMurder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpMurder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpMurder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpMurder.Size = new System.Drawing.Size(468, 345);
+            this.tlpMurder.Size = new System.Drawing.Size(452, 329);
             this.tlpMurder.TabIndex = 0;
             // 
             // btnKillPlayer
@@ -74,9 +74,9 @@
             this.btnKillPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnKillPlayer.FlatAppearance.BorderSize = 0;
             this.btnKillPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKillPlayer.Location = new System.Drawing.Point(49, 279);
+            this.btnKillPlayer.Location = new System.Drawing.Point(48, 263);
             this.btnKillPlayer.Name = "btnKillPlayer";
-            this.btnKillPlayer.Size = new System.Drawing.Size(181, 63);
+            this.btnKillPlayer.Size = new System.Drawing.Size(174, 63);
             this.btnKillPlayer.TabIndex = 0;
             this.btnKillPlayer.Text = "Kill";
             this.btnKillPlayer.UseVisualStyleBackColor = true;
@@ -87,20 +87,20 @@
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(236, 279);
+            this.btnBack.Location = new System.Drawing.Point(228, 263);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(181, 63);
+            this.btnBack.Size = new System.Drawing.Size(174, 63);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Close window";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(49, 0);
+            this.label1.Location = new System.Drawing.Point(48, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 69);
+            this.label1.Size = new System.Drawing.Size(174, 65);
             this.label1.TabIndex = 4;
             this.label1.Text = "enter hours:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -108,10 +108,10 @@
             // lblSummary
             // 
             this.lblSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSummary.Location = new System.Drawing.Point(49, 141);
+            this.lblSummary.Location = new System.Drawing.Point(48, 133);
             this.lblSummary.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblSummary.Name = "lblSummary";
-            this.lblSummary.Size = new System.Drawing.Size(181, 66);
+            this.lblSummary.Size = new System.Drawing.Size(174, 62);
             this.lblSummary.TabIndex = 6;
             this.lblSummary.Text = "summary time:";
             this.lblSummary.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -122,11 +122,11 @@
             this.tbxTimeLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxTimeLeft.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tbxTimeLeft.Enabled = false;
-            this.tbxTimeLeft.Location = new System.Drawing.Point(236, 178);
+            this.tbxTimeLeft.Location = new System.Drawing.Point(228, 166);
             this.tbxTimeLeft.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.tbxTimeLeft.MaxLength = 30;
             this.tbxTimeLeft.Name = "tbxTimeLeft";
-            this.tbxTimeLeft.Size = new System.Drawing.Size(181, 29);
+            this.tbxTimeLeft.Size = new System.Drawing.Size(174, 29);
             this.tbxTimeLeft.TabIndex = 7;
             this.tbxTimeLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -135,23 +135,24 @@
             this.numHours.BackColor = System.Drawing.Color.Silver;
             this.numHours.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numHours.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.numHours.Location = new System.Drawing.Point(236, 37);
+            this.numHours.Location = new System.Drawing.Point(228, 36);
+            this.numHours.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.numHours.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.numHours.Name = "numHours";
-            this.numHours.Size = new System.Drawing.Size(181, 29);
+            this.numHours.Size = new System.Drawing.Size(174, 29);
             this.numHours.TabIndex = 8;
             this.numHours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(49, 69);
+            this.label2.Location = new System.Drawing.Point(48, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 69);
+            this.label2.Size = new System.Drawing.Size(174, 65);
             this.label2.TabIndex = 9;
             this.label2.Text = "enter minutes:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -161,7 +162,7 @@
             this.numMinutes.BackColor = System.Drawing.Color.Silver;
             this.numMinutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numMinutes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numMinutes.Location = new System.Drawing.Point(236, 89);
+            this.numMinutes.Location = new System.Drawing.Point(228, 85);
             this.numMinutes.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.numMinutes.Maximum = new decimal(new int[] {
             59,
@@ -169,7 +170,7 @@
             0,
             0});
             this.numMinutes.Name = "numMinutes";
-            this.numMinutes.Size = new System.Drawing.Size(181, 29);
+            this.numMinutes.Size = new System.Drawing.Size(174, 29);
             this.numMinutes.TabIndex = 10;
             this.numMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -178,7 +179,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(460, 337);
+            this.ClientSize = new System.Drawing.Size(452, 329);
             this.ControlBox = false;
             this.Controls.Add(this.tlpMurder);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);

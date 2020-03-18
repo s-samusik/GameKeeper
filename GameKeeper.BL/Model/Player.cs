@@ -52,6 +52,11 @@ namespace GameKeeper.BL.Model
         /// Player's state of life.
         /// </summary>
         public bool IsDead { get; set; }
+
+        /// <summary>
+        /// Dead time for current player until next respawn.
+        /// </summary>
+        public int DeadTimeInMinutes { get; set; }
         #endregion
 
 

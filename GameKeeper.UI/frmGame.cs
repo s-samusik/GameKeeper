@@ -88,9 +88,14 @@ namespace GameKeeper.UI
         #region Buttons - Current game
         private void btnGroupings_Click(object sender, EventArgs e)
         {
-            Hide();
-            FrmGrouping frmGrouping = new FrmGrouping();
-            frmGrouping.ShowDialog();
+            frmVerification = new FrmVerification(this);
+            frmVerification.ShowDialog();
+            if (IsVerification)
+            {
+                Hide();
+                FrmGrouping frmGrouping = new FrmGrouping();
+                frmGrouping.ShowDialog();
+            }
         }
 
         private void btnGetStatisic_Click(object sender, EventArgs e)
