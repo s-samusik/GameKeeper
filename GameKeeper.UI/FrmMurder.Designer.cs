@@ -37,6 +37,8 @@
             this.numHours = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.numMinutes = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbxPunishment = new System.Windows.Forms.TextBox();
             this.tlpMurder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMinutes)).BeginInit();
@@ -57,6 +59,8 @@
             this.tlpMurder.Controls.Add(this.numHours, 2, 0);
             this.tlpMurder.Controls.Add(this.label2, 1, 1);
             this.tlpMurder.Controls.Add(this.numMinutes, 2, 1);
+            this.tlpMurder.Controls.Add(this.label3, 1, 3);
+            this.tlpMurder.Controls.Add(this.tbxPunishment, 2, 3);
             this.tlpMurder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMurder.Location = new System.Drawing.Point(0, 0);
             this.tlpMurder.Name = "tlpMurder";
@@ -66,7 +70,7 @@
             this.tlpMurder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpMurder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpMurder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpMurder.Size = new System.Drawing.Size(452, 329);
+            this.tlpMurder.Size = new System.Drawing.Size(444, 321);
             this.tlpMurder.TabIndex = 0;
             // 
             // btnKillPlayer
@@ -74,9 +78,9 @@
             this.btnKillPlayer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnKillPlayer.FlatAppearance.BorderSize = 0;
             this.btnKillPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKillPlayer.Location = new System.Drawing.Point(48, 263);
+            this.btnKillPlayer.Location = new System.Drawing.Point(47, 259);
             this.btnKillPlayer.Name = "btnKillPlayer";
-            this.btnKillPlayer.Size = new System.Drawing.Size(174, 63);
+            this.btnKillPlayer.Size = new System.Drawing.Size(171, 59);
             this.btnKillPlayer.TabIndex = 0;
             this.btnKillPlayer.Text = "Kill";
             this.btnKillPlayer.UseVisualStyleBackColor = true;
@@ -87,9 +91,9 @@
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(228, 263);
+            this.btnBack.Location = new System.Drawing.Point(224, 259);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(174, 63);
+            this.btnBack.Size = new System.Drawing.Size(171, 59);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Close window";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -98,9 +102,9 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(48, 0);
+            this.label1.Location = new System.Drawing.Point(47, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 65);
+            this.label1.Size = new System.Drawing.Size(171, 64);
             this.label1.TabIndex = 4;
             this.label1.Text = "enter hours:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -108,25 +112,25 @@
             // lblSummary
             // 
             this.lblSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSummary.Location = new System.Drawing.Point(48, 133);
+            this.lblSummary.Location = new System.Drawing.Point(47, 131);
             this.lblSummary.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblSummary.Name = "lblSummary";
-            this.lblSummary.Size = new System.Drawing.Size(174, 62);
+            this.lblSummary.Size = new System.Drawing.Size(171, 61);
             this.lblSummary.TabIndex = 6;
             this.lblSummary.Text = "summary time:";
-            this.lblSummary.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblSummary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbxTimeLeft
             // 
             this.tbxTimeLeft.BackColor = System.Drawing.Color.Silver;
             this.tbxTimeLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxTimeLeft.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbxTimeLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxTimeLeft.Enabled = false;
-            this.tbxTimeLeft.Location = new System.Drawing.Point(228, 166);
-            this.tbxTimeLeft.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.tbxTimeLeft.Location = new System.Drawing.Point(224, 145);
+            this.tbxTimeLeft.Margin = new System.Windows.Forms.Padding(3, 17, 3, 3);
             this.tbxTimeLeft.MaxLength = 30;
             this.tbxTimeLeft.Name = "tbxTimeLeft";
-            this.tbxTimeLeft.Size = new System.Drawing.Size(174, 29);
+            this.tbxTimeLeft.Size = new System.Drawing.Size(171, 29);
             this.tbxTimeLeft.TabIndex = 7;
             this.tbxTimeLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -135,7 +139,7 @@
             this.numHours.BackColor = System.Drawing.Color.Silver;
             this.numHours.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numHours.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.numHours.Location = new System.Drawing.Point(228, 36);
+            this.numHours.Location = new System.Drawing.Point(224, 35);
             this.numHours.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.numHours.Maximum = new decimal(new int[] {
             59,
@@ -143,16 +147,16 @@
             0,
             0});
             this.numHours.Name = "numHours";
-            this.numHours.Size = new System.Drawing.Size(174, 29);
+            this.numHours.Size = new System.Drawing.Size(171, 29);
             this.numHours.TabIndex = 8;
             this.numHours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(48, 65);
+            this.label2.Location = new System.Drawing.Point(47, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 65);
+            this.label2.Size = new System.Drawing.Size(171, 64);
             this.label2.TabIndex = 9;
             this.label2.Text = "enter minutes:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,7 +166,7 @@
             this.numMinutes.BackColor = System.Drawing.Color.Silver;
             this.numMinutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numMinutes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numMinutes.Location = new System.Drawing.Point(228, 85);
+            this.numMinutes.Location = new System.Drawing.Point(224, 84);
             this.numMinutes.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.numMinutes.Maximum = new decimal(new int[] {
             59,
@@ -170,16 +174,39 @@
             0,
             0});
             this.numMinutes.Name = "numMinutes";
-            this.numMinutes.Size = new System.Drawing.Size(174, 29);
+            this.numMinutes.Size = new System.Drawing.Size(171, 29);
             this.numMinutes.TabIndex = 10;
             this.numMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(47, 192);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(171, 64);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "size of punishment";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbxPunishment
+            // 
+            this.tbxPunishment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxPunishment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPunishment.Location = new System.Drawing.Point(224, 209);
+            this.tbxPunishment.Margin = new System.Windows.Forms.Padding(3, 17, 3, 3);
+            this.tbxPunishment.MaxLength = 30;
+            this.tbxPunishment.Name = "tbxPunishment";
+            this.tbxPunishment.Size = new System.Drawing.Size(171, 29);
+            this.tbxPunishment.TabIndex = 12;
+            this.tbxPunishment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbxPunishment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPunishment_KeyPress);
             // 
             // FrmMurder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(452, 329);
+            this.ClientSize = new System.Drawing.Size(444, 321);
             this.ControlBox = false;
             this.Controls.Add(this.tlpMurder);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -191,6 +218,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameKeeper: kill current player";
+            this.TopMost = true;
             this.tlpMurder.ResumeLayout(false);
             this.tlpMurder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHours)).EndInit();
@@ -210,5 +238,7 @@
         private System.Windows.Forms.NumericUpDown numHours;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numMinutes;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbxPunishment;
     }
 }

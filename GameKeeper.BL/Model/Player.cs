@@ -56,9 +56,8 @@ namespace GameKeeper.BL.Model
         /// <summary>
         /// Dead time for current player until next respawn.
         /// </summary>
-        public int DeadTimeInMinutes { get; set; }
+        public int DeadTimeInSecond { get; set; }
         #endregion
-
 
         /// <summary>
         /// Create new player.

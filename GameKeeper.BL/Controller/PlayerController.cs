@@ -9,10 +9,9 @@ namespace GameKeeper.BL.Controller
 {
     public class PlayerController : BaseController
     {
-        public delegate void MethodContainer();
+        public delegate void Counter();
 
-        public event MethodContainer OnRespawn;
-
+        public event Counter OnRespawn;
 
         private const string PLAYERS_FILE_NAME = "Players.dat";
 
@@ -32,6 +31,11 @@ namespace GameKeeper.BL.Controller
         /// Current player is new.
         /// </summary>
         public bool IsCurrentPlayerNew { get; set; } = false;
+
+        /// <summary>
+        /// Punishment for death current player.
+        /// </summary>
+        public double Punishment { get; set; }
         #endregion
 
         #region Constructors
@@ -143,12 +147,16 @@ namespace GameKeeper.BL.Controller
         {
             if (CurrentPlayer.IsDead)
             {
-                return $"killed. Time left: {TimeSpan.FromMinutes(CurrentPlayer.DeadTimeInMinutes).ToString(@"hh\:mm")}";
+                return $"killed. Time left: {TimeSpan.FromSeconds(CurrentPlayer.DeadTimeInSecond).ToString(@"hh\:mm\:ss")}";
             }
             return "alive";
         }
 
-        public async Task PlayerStateAsync()
+        /// <summary>
+        /// Dead time of current player.
+        /// </summary>
+        /// <returns></returns>
+        public async Task DeadTimeAsync()
         {
             await Task.Run(() => TimeCounter());
             CurrentPlayer.IsDead = false;
@@ -156,12 +164,32 @@ namespace GameKeeper.BL.Controller
             SavePlayersData();
         }
 
+        /// <summary>
+        /// Put fine for death current player.
+        /// </summary>
+        /// <param name="punishment">size of punishment</param>
+        /// <returns>True if the punishment is applied.</returns>
+        public bool PutPunishmentForDeath(string punishment)
+        {
+            if (!string.IsNullOrEmpty(punishment)) Punishment = double.Parse(punishment);
+
+            if (CurrentPlayer.Cash < Punishment) return false;
+
+            CurrentPlayer.Cash -= Punishment;
+            SavePlayersData();
+
+            return true;
+        }
+
+        /// <summary>
+        /// Counter dead time of current player.
+        /// </summary>
         private void TimeCounter()
         {
-            while (CurrentPlayer.DeadTimeInMinutes > 0)
+            while (CurrentPlayer.DeadTimeInSecond > 0)
             {
-                CurrentPlayer.DeadTimeInMinutes--;
-                Thread.Sleep(60000);
+                CurrentPlayer.DeadTimeInSecond--;
+                Thread.Sleep(1000);
             }
         }
     }

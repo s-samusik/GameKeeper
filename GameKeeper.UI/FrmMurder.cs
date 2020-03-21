@@ -7,30 +7,28 @@ namespace GameKeeper.UI
     public partial class FrmMurder : Form
     {
         private PlayerController playerController;
-
+        private FrmPlayer prevForm;
         private int hours;
         private int minutes;
 
-        public FrmMurder(PlayerController currentPlayer)
+        #region Constructor
+        public FrmMurder(PlayerController currentPlayer, FrmPlayer frmPlayer)
         {
             InitializeComponent();
             playerController = currentPlayer;
+            prevForm = frmPlayer;
 
             Text = $"GameKeeper: kill {playerController.CurrentPlayer.NickName}";
             tbxTimeLeft.Text = $"{hours} hours, {minutes} minutes";
+            btnKillPlayer.Enabled = false;
 
+            tbxPunishment.Text = "0";
             numMinutes.ValueChanged += TimeLeft_ValueChanged;
             numHours.ValueChanged += TimeLeft_ValueChanged;
         }
+        #endregion
 
-        private void TimeLeft_ValueChanged(object sender, EventArgs e)
-        {
-            hours = (int)numHours.Value;
-            minutes = (int)numMinutes.Value;
-
-            tbxTimeLeft.Text = $"{hours} hours, {minutes} minutes";
-        }
-
+        #region Buttons
         private void btnBack_Click(object sender, EventArgs e)
         {
             Close();
@@ -42,15 +40,40 @@ namespace GameKeeper.UI
 
             if (result == DialogResult.OK)
             {
-                playerController.CurrentPlayer.DeadTimeInMinutes = hours * 60 + minutes;
-                playerController.CurrentPlayer.IsDead = true;
-                playerController.PlayerStateAsync();
+                if (playerController.PutPunishmentForDeath(tbxPunishment.Text))
+                {
+                    playerController.CurrentPlayer.DeadTimeInSecond = (hours * 60 + minutes) * 60;
+                    playerController.CurrentPlayer.IsDead = true;
+                    playerController.CurrentPlayer.CountOfDeaths += 1;
+                    playerController.DeadTimeAsync();
 
-                lblSummary.Text = "time before respawn:";
-                numHours.Enabled = false;
-                numMinutes.Enabled = false;
-                btnKillPlayer.Enabled = false;
+                    MessageBox.Show($"{playerController.CurrentPlayer.NickName} got punishment {playerController.Punishment} for him death.", "GameKeeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    prevForm.CashInWallet = playerController.CurrentPlayer.Cash;
+                }
+                else
+                {
+                    MessageBox.Show($"{playerController.CurrentPlayer.NickName} haven't money for this punishment.", "GameKeeper", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                Close();
             }
+        }
+        #endregion
+
+        private void TimeLeft_ValueChanged(object sender, EventArgs e)
+        {
+            hours = (int)numHours.Value;
+            minutes = (int)numMinutes.Value;
+
+            tbxTimeLeft.Text = $"{hours} hours, {minutes} minutes";
+
+            btnKillPlayer.Enabled = hours != 0 || minutes != 0;
+        }
+
+        private void tbxPunishment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }

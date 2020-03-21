@@ -23,21 +23,16 @@ namespace GameKeeper.UI
             playerController = new PlayerController(playerID);
             groupingController = new GroupingController();
 
-            if (playerController.IsCurrentPlayerNew)
-            {
-                ViewPanelNewPlayer(playerController);
-            }
+            if (playerController.IsCurrentPlayerNew) ViewPanelNewPlayer(playerController);
             else
             {
-                ViewPanelCurrentPlayer(playerController);
                 IsPlayerNew = false;
+                ViewPanelCurrentPlayer(playerController);
                 playerController.OnRespawn += PlayerController_OnRespawn;
+                timer.Enabled = true;
                 timer.Start();
 
-                if (playerController.CurrentPlayer.IsDead)
-                {
-                    playerController.PlayerStateAsync();
-                }
+                if (playerController.CurrentPlayer.IsDead) _ = playerController.DeadTimeAsync();
             }
         }
         #endregion
@@ -68,12 +63,13 @@ namespace GameKeeper.UI
             RefreshGroupingList(cbxCurrentGrouping);
             cbxCurrentGrouping.Text = playerController.CurrentPlayer.Grouping.Name;
             tbxPlayersState.Text = playerController.ReturnPlayerState();
-            
+
+            btnKillPlayer.Enabled = !playerController.CurrentPlayer.IsDead;
         }
 
         private void PlayerController_OnRespawn()
         {
-            MessageBox.Show($"{ playerController.CurrentPlayer.NickName} alive.","GameKeeper",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show($"Time of dead for { playerController.CurrentPlayer.NickName} completed. He's alive.", "GameKeeper", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void RefreshGroupingList(ComboBox comboBox)
@@ -128,7 +124,7 @@ namespace GameKeeper.UI
 
         private void btnKillPlayer_Click(object sender, EventArgs e)
         {
-            FrmMurder frmMurder = new FrmMurder(playerController);
+            FrmMurder frmMurder = new FrmMurder(playerController, this);
             frmMurder.ShowDialog();
         }
 
@@ -146,7 +142,6 @@ namespace GameKeeper.UI
             if (result == DialogResult.OK)
             {
                 playerController.DelCurrentPlayer();
-
                 Close();
                 prevForm.Show();
             }
