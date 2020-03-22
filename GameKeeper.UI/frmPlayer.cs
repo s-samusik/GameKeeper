@@ -119,7 +119,8 @@ namespace GameKeeper.UI
 
         private void btnQuests_Click(object sender, EventArgs e)
         {
-
+            FrmQuest frmQuest = new FrmQuest();
+            frmQuest.ShowDialog();
         }
 
         private void btnKillPlayer_Click(object sender, EventArgs e)

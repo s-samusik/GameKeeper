@@ -92,6 +92,12 @@
     <Compile Include="FrmPlayer.Designer.cs">
       <DependentUpon>FrmPlayer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmQuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuest.Designer.cs">
+      <DependentUpon>FrmQuest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVerification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPlayer.resx">
       <DependentUpon>FrmPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuest.resx">
+      <DependentUpon>FrmQuest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVerification.resx">
       <DependentUpon>FrmVerification.cs</DependentUpon>
