@@ -101,7 +101,7 @@ namespace GameKeeper.UI
 
         private void btnGetStatisic_Click(object sender, EventArgs e)
         {
-            frmStatistic = new FrmStatistic();
+            frmStatistic = new FrmStatistic(gameController);
             frmStatistic.ShowDialog();
         }
 

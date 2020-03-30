@@ -62,7 +62,7 @@ namespace GameKeeper.UI
             tbxCashInWallet.Text = CashInWallet.ToString();
             RefreshGroupingList(cbxCurrentGrouping);
             cbxCurrentGrouping.Text = playerController.CurrentPlayer.Grouping.Name;
-            tbxPlayersState.Text = playerController.ReturnPlayerState();
+            tbxPlayersState.Text = playerController.GetPlayerState();
 
             btnKillPlayer.Enabled = !playerController.CurrentPlayer.IsDead;
         }

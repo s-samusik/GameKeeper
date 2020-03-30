@@ -69,7 +69,7 @@
             // spcNewCurrent.Panel2
             // 
             this.spcNewCurrent.Panel2.Controls.Add(this.tlpCurrentGame);
-            this.spcNewCurrent.Size = new System.Drawing.Size(660, 487);
+            this.spcNewCurrent.Size = new System.Drawing.Size(656, 483);
             this.spcNewCurrent.SplitterDistance = 294;
             this.spcNewCurrent.SplitterWidth = 1;
             this.spcNewCurrent.TabIndex = 0;
@@ -100,7 +100,7 @@
             this.tlpNewGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpNewGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpNewGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tlpNewGame.Size = new System.Drawing.Size(294, 487);
+            this.tlpNewGame.Size = new System.Drawing.Size(294, 483);
             this.tlpNewGame.TabIndex = 0;
             // 
             // lblRePassword
@@ -153,7 +153,7 @@
             this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitGame.Location = new System.Drawing.Point(32, 423);
             this.btnExitGame.Name = "btnExitGame";
-            this.btnExitGame.Size = new System.Drawing.Size(229, 61);
+            this.btnExitGame.Size = new System.Drawing.Size(229, 57);
             this.btnExitGame.TabIndex = 4;
             this.btnExitGame.Text = "Close game keeper";
             this.btnExitGame.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.tlpCurrentGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpCurrentGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpCurrentGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tlpCurrentGame.Size = new System.Drawing.Size(365, 487);
+            this.tlpCurrentGame.Size = new System.Drawing.Size(361, 483);
             this.tlpCurrentGame.TabIndex = 0;
             // 
             // lblEnterID
@@ -229,7 +229,7 @@
             this.lblEnterID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEnterID.Location = new System.Drawing.Point(39, 120);
             this.lblEnterID.Name = "lblEnterID";
-            this.lblEnterID.Size = new System.Drawing.Size(286, 60);
+            this.lblEnterID.Size = new System.Drawing.Size(282, 60);
             this.lblEnterID.TabIndex = 0;
             this.lblEnterID.Text = "enter unique player\'s ID";
             this.lblEnterID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,7 +242,7 @@
             this.tbxID.Margin = new System.Windows.Forms.Padding(0);
             this.tbxID.MaxLength = 30;
             this.tbxID.Name = "tbxID";
-            this.tbxID.Size = new System.Drawing.Size(292, 29);
+            this.tbxID.Size = new System.Drawing.Size(288, 29);
             this.tbxID.TabIndex = 1;
             this.tbxID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbxID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxID_KeyDown);
@@ -254,7 +254,7 @@
             this.btnCompleteGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompleteGame.Location = new System.Drawing.Point(39, 363);
             this.btnCompleteGame.Name = "btnCompleteGame";
-            this.btnCompleteGame.Size = new System.Drawing.Size(286, 54);
+            this.btnCompleteGame.Size = new System.Drawing.Size(282, 54);
             this.btnCompleteGame.TabIndex = 2;
             this.btnCompleteGame.Text = "Complete current game";
             this.btnCompleteGame.UseVisualStyleBackColor = true;
@@ -267,7 +267,7 @@
             this.btnGetStatisic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetStatisic.Location = new System.Drawing.Point(39, 303);
             this.btnGetStatisic.Name = "btnGetStatisic";
-            this.btnGetStatisic.Size = new System.Drawing.Size(286, 54);
+            this.btnGetStatisic.Size = new System.Drawing.Size(282, 54);
             this.btnGetStatisic.TabIndex = 3;
             this.btnGetStatisic.Text = "Get statistic of game";
             this.btnGetStatisic.UseVisualStyleBackColor = true;
@@ -280,7 +280,7 @@
             this.btnGroupings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupings.Location = new System.Drawing.Point(39, 243);
             this.btnGroupings.Name = "btnGroupings";
-            this.btnGroupings.Size = new System.Drawing.Size(286, 54);
+            this.btnGroupings.Size = new System.Drawing.Size(282, 54);
             this.btnGroupings.TabIndex = 4;
             this.btnGroupings.Text = "Groupings";
             this.btnGroupings.UseVisualStyleBackColor = true;
@@ -293,7 +293,7 @@
             this.btnCloseKeeper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseKeeper.Location = new System.Drawing.Point(39, 423);
             this.btnCloseKeeper.Name = "btnCloseKeeper";
-            this.btnCloseKeeper.Size = new System.Drawing.Size(286, 61);
+            this.btnCloseKeeper.Size = new System.Drawing.Size(282, 57);
             this.btnCloseKeeper.TabIndex = 5;
             this.btnCloseKeeper.Text = "Close game keeper";
             this.btnCloseKeeper.UseVisualStyleBackColor = true;
@@ -304,7 +304,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(660, 487);
+            this.ClientSize = new System.Drawing.Size(656, 483);
             this.ControlBox = false;
             this.Controls.Add(this.spcNewCurrent);
             this.DoubleBuffered = true;

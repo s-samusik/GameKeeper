@@ -181,6 +181,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmStatistic";
+            this.Load += new System.EventHandler(this.FrmStatistic_Load);
             this.tlpMain.ResumeLayout(false);
             this.ResumeLayout(false);
 

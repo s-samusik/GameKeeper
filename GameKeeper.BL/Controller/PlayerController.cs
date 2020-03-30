@@ -39,6 +39,11 @@ namespace GameKeeper.BL.Controller
         #endregion
 
         #region Constructors
+        public PlayerController()
+        {
+            Players = GetPlayersData();
+        }
+
         public PlayerController(string playerId)
         {
             #region Verification of conditions
@@ -68,6 +73,18 @@ namespace GameKeeper.BL.Controller
         private List<Player> GetPlayersData()
         {
             return Load<List<Player>>(PLAYERS_FILE_NAME) ?? new List<Player>();
+        }
+
+        /// <summary>
+        /// Counter dead time of current player.
+        /// </summary>
+        private void TimeCounter()
+        {
+            while (CurrentPlayer.DeadTimeInSecond > 0)
+            {
+                CurrentPlayer.DeadTimeInSecond--;
+                Thread.Sleep(1000);
+            }
         }
 
         /// <summary>
@@ -143,7 +160,7 @@ namespace GameKeeper.BL.Controller
         /// Return current state of player.
         /// </summary>
         /// <returns>Player's state.</returns>
-        public string ReturnPlayerState()
+        public string GetPlayerState()
         {
             if (CurrentPlayer.IsDead)
             {
@@ -171,26 +188,55 @@ namespace GameKeeper.BL.Controller
         /// <returns>True if the punishment is applied.</returns>
         public bool PutPunishmentForDeath(string punishment)
         {
-            if (!string.IsNullOrEmpty(punishment)) Punishment = double.Parse(punishment);
+            if (!string.IsNullOrEmpty(punishment))
+                Punishment = double.Parse(punishment);
 
-            if (CurrentPlayer.Cash < Punishment) return false;
+            if (CurrentPlayer.Cash < Punishment)
+                return false;
 
             CurrentPlayer.Cash -= Punishment;
             SavePlayersData();
-
             return true;
         }
 
         /// <summary>
-        /// Counter dead time of current player.
+        /// Return total players in current game.
         /// </summary>
-        private void TimeCounter()
+        /// <returns>Number of players.</returns>
+        public int GetTotalPlayers()
         {
-            while (CurrentPlayer.DeadTimeInSecond > 0)
+            return Players.Count;
+        }
+
+        /// <summary>
+        /// Return total money in current game.
+        /// </summary>
+        /// <returns>Amount of money.</returns>
+        public double GetTotalMoney()
+        {
+            double totalMoney = 0;
+
+            foreach (var player in Players)
             {
-                CurrentPlayer.DeadTimeInSecond--;
-                Thread.Sleep(1000);
+                totalMoney += player.Cash;
             }
+            return totalMoney;
+        }
+
+        /// <summary>
+        /// Return number of killed players in current game.
+        /// </summary>
+        /// <returns>Number of killed players.</returns>
+        public int GetNumberOfKilledPlayers()
+        {
+            int counter = 0;
+
+            foreach (var player in Players)
+            {
+                if (player.IsDead)
+                    counter++;
+            }
+            return counter;
         }
     }
 }
