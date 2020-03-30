@@ -69,7 +69,7 @@
             // spcNewCurrent.Panel2
             // 
             this.spcNewCurrent.Panel2.Controls.Add(this.tlpCurrentGame);
-            this.spcNewCurrent.Size = new System.Drawing.Size(664, 491);
+            this.spcNewCurrent.Size = new System.Drawing.Size(660, 487);
             this.spcNewCurrent.SplitterDistance = 294;
             this.spcNewCurrent.SplitterWidth = 1;
             this.spcNewCurrent.TabIndex = 0;
@@ -100,15 +100,15 @@
             this.tlpNewGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpNewGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpNewGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tlpNewGame.Size = new System.Drawing.Size(294, 491);
+            this.tlpNewGame.Size = new System.Drawing.Size(294, 487);
             this.tlpNewGame.TabIndex = 0;
             // 
             // lblRePassword
             // 
             this.lblRePassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRePassword.Location = new System.Drawing.Point(32, 244);
+            this.lblRePassword.Location = new System.Drawing.Point(32, 240);
             this.lblRePassword.Name = "lblRePassword";
-            this.lblRePassword.Size = new System.Drawing.Size(229, 61);
+            this.lblRePassword.Size = new System.Drawing.Size(229, 60);
             this.lblRePassword.TabIndex = 2;
             this.lblRePassword.Text = "re-enter password";
             this.lblRePassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,9 +116,9 @@
             // lblPassword
             // 
             this.lblPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPassword.Location = new System.Drawing.Point(32, 122);
+            this.lblPassword.Location = new System.Drawing.Point(32, 120);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(229, 61);
+            this.lblPassword.Size = new System.Drawing.Size(229, 60);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "enter password";
             this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,7 +128,7 @@
             this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblName.Location = new System.Drawing.Point(32, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(229, 61);
+            this.lblName.Size = new System.Drawing.Size(229, 60);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "enter name of game";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,9 +138,9 @@
             this.btnCreateGame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCreateGame.FlatAppearance.BorderSize = 0;
             this.btnCreateGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateGame.Location = new System.Drawing.Point(32, 369);
+            this.btnCreateGame.Location = new System.Drawing.Point(32, 363);
             this.btnCreateGame.Name = "btnCreateGame";
-            this.btnCreateGame.Size = new System.Drawing.Size(229, 55);
+            this.btnCreateGame.Size = new System.Drawing.Size(229, 54);
             this.btnCreateGame.TabIndex = 3;
             this.btnCreateGame.Text = "Create new game";
             this.btnCreateGame.UseVisualStyleBackColor = true;
@@ -151,9 +151,9 @@
             this.btnExitGame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnExitGame.FlatAppearance.BorderSize = 0;
             this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitGame.Location = new System.Drawing.Point(32, 430);
+            this.btnExitGame.Location = new System.Drawing.Point(32, 423);
             this.btnExitGame.Name = "btnExitGame";
-            this.btnExitGame.Size = new System.Drawing.Size(229, 58);
+            this.btnExitGame.Size = new System.Drawing.Size(229, 61);
             this.btnExitGame.TabIndex = 4;
             this.btnExitGame.Text = "Close game keeper";
             this.btnExitGame.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@
             // 
             this.tbxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxName.Location = new System.Drawing.Point(29, 61);
+            this.tbxName.Location = new System.Drawing.Point(29, 60);
             this.tbxName.Margin = new System.Windows.Forms.Padding(0);
             this.tbxName.MaxLength = 30;
             this.tbxName.Name = "tbxName";
@@ -175,7 +175,7 @@
             // 
             this.tbxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxPassword.Location = new System.Drawing.Point(29, 183);
+            this.tbxPassword.Location = new System.Drawing.Point(29, 180);
             this.tbxPassword.Margin = new System.Windows.Forms.Padding(0);
             this.tbxPassword.MaxLength = 30;
             this.tbxPassword.Name = "tbxPassword";
@@ -188,7 +188,7 @@
             // 
             this.tbxRePassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxRePassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxRePassword.Location = new System.Drawing.Point(29, 305);
+            this.tbxRePassword.Location = new System.Drawing.Point(29, 300);
             this.tbxRePassword.Margin = new System.Windows.Forms.Padding(0);
             this.tbxRePassword.MaxLength = 30;
             this.tbxRePassword.Name = "tbxRePassword";
@@ -221,15 +221,15 @@
             this.tlpCurrentGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpCurrentGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tlpCurrentGame.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tlpCurrentGame.Size = new System.Drawing.Size(369, 491);
+            this.tlpCurrentGame.Size = new System.Drawing.Size(365, 487);
             this.tlpCurrentGame.TabIndex = 0;
             // 
             // lblEnterID
             // 
             this.lblEnterID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEnterID.Location = new System.Drawing.Point(39, 122);
+            this.lblEnterID.Location = new System.Drawing.Point(39, 120);
             this.lblEnterID.Name = "lblEnterID";
-            this.lblEnterID.Size = new System.Drawing.Size(289, 61);
+            this.lblEnterID.Size = new System.Drawing.Size(286, 60);
             this.lblEnterID.TabIndex = 0;
             this.lblEnterID.Text = "enter unique player\'s ID";
             this.lblEnterID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -238,11 +238,11 @@
             // 
             this.tbxID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxID.Location = new System.Drawing.Point(36, 183);
+            this.tbxID.Location = new System.Drawing.Point(36, 180);
             this.tbxID.Margin = new System.Windows.Forms.Padding(0);
             this.tbxID.MaxLength = 30;
             this.tbxID.Name = "tbxID";
-            this.tbxID.Size = new System.Drawing.Size(295, 29);
+            this.tbxID.Size = new System.Drawing.Size(292, 29);
             this.tbxID.TabIndex = 1;
             this.tbxID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbxID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxID_KeyDown);
@@ -252,9 +252,9 @@
             this.btnCompleteGame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCompleteGame.FlatAppearance.BorderSize = 0;
             this.btnCompleteGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompleteGame.Location = new System.Drawing.Point(39, 369);
+            this.btnCompleteGame.Location = new System.Drawing.Point(39, 363);
             this.btnCompleteGame.Name = "btnCompleteGame";
-            this.btnCompleteGame.Size = new System.Drawing.Size(289, 55);
+            this.btnCompleteGame.Size = new System.Drawing.Size(286, 54);
             this.btnCompleteGame.TabIndex = 2;
             this.btnCompleteGame.Text = "Complete current game";
             this.btnCompleteGame.UseVisualStyleBackColor = true;
@@ -265,9 +265,9 @@
             this.btnGetStatisic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGetStatisic.FlatAppearance.BorderSize = 0;
             this.btnGetStatisic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGetStatisic.Location = new System.Drawing.Point(39, 308);
+            this.btnGetStatisic.Location = new System.Drawing.Point(39, 303);
             this.btnGetStatisic.Name = "btnGetStatisic";
-            this.btnGetStatisic.Size = new System.Drawing.Size(289, 55);
+            this.btnGetStatisic.Size = new System.Drawing.Size(286, 54);
             this.btnGetStatisic.TabIndex = 3;
             this.btnGetStatisic.Text = "Get statistic of game";
             this.btnGetStatisic.UseVisualStyleBackColor = true;
@@ -278,9 +278,9 @@
             this.btnGroupings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGroupings.FlatAppearance.BorderSize = 0;
             this.btnGroupings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGroupings.Location = new System.Drawing.Point(39, 247);
+            this.btnGroupings.Location = new System.Drawing.Point(39, 243);
             this.btnGroupings.Name = "btnGroupings";
-            this.btnGroupings.Size = new System.Drawing.Size(289, 55);
+            this.btnGroupings.Size = new System.Drawing.Size(286, 54);
             this.btnGroupings.TabIndex = 4;
             this.btnGroupings.Text = "Groupings";
             this.btnGroupings.UseVisualStyleBackColor = true;
@@ -291,9 +291,9 @@
             this.btnCloseKeeper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCloseKeeper.FlatAppearance.BorderSize = 0;
             this.btnCloseKeeper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseKeeper.Location = new System.Drawing.Point(39, 430);
+            this.btnCloseKeeper.Location = new System.Drawing.Point(39, 423);
             this.btnCloseKeeper.Name = "btnCloseKeeper";
-            this.btnCloseKeeper.Size = new System.Drawing.Size(289, 58);
+            this.btnCloseKeeper.Size = new System.Drawing.Size(286, 61);
             this.btnCloseKeeper.TabIndex = 5;
             this.btnCloseKeeper.Text = "Close game keeper";
             this.btnCloseKeeper.UseVisualStyleBackColor = true;
@@ -304,7 +304,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(664, 491);
+            this.ClientSize = new System.Drawing.Size(660, 487);
             this.ControlBox = false;
             this.Controls.Add(this.spcNewCurrent);
             this.DoubleBuffered = true;

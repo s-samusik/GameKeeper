@@ -10,6 +10,7 @@ namespace GameKeeper.UI
 
         private FrmPlayer frmPlayer;
         private Form frmVerification;
+        private FrmStatistic frmStatistic;
         private GameController gameController;
 
         #region Constructor
@@ -100,6 +101,8 @@ namespace GameKeeper.UI
 
         private void btnGetStatisic_Click(object sender, EventArgs e)
         {
+            frmStatistic = new FrmStatistic();
+            frmStatistic.ShowDialog();
         }
 
         private void btnCompleteGame_Click(object sender, EventArgs e)
